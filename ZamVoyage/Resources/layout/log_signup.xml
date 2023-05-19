@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/registerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="Register"
+            android:textSize="37sp"
+            android:textColor="#0D8BFF"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/helloText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Hello user,"
+            android:textSize="22sp"
+            android:textColor="#000000"
+            android:textStyle=""/>
+
+        <TextView
+            android:id="@+id/detailsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="do have a great journey."
+            android:textSize="22sp"
+            android:textColor="#000000"/>
+
+        <EditText
+            android:id="@+id/firstnameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_border"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="0dp"
+            android:inputType="textEmailAddress"
+            android:hint="First Name*"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/warningTextView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="25dp"
+            android:visibility="gone"
+            android:textSize="14sp"
+            android:text=""/>
+
+        <EditText
+            android:id="@+id/lastnameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_border"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="0dp"
+            android:inputType="textEmailAddress"
+            android:hint="Last Name*"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/warningTextView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="25dp"
+            android:visibility="gone"
+            android:textSize="14sp"
+            android:text=""/>
+
+        <EditText
+            android:id="@+id/usernameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_border"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="0dp"
+            android:inputType="textEmailAddress"
+            android:hint="Username*"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/warningTextView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="25dp"
+            android:visibility="gone"
+            android:textSize="14sp"
+            android:text=""/>
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_border"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="0dp"
+            android:inputType="textEmailAddress"
+            android:hint="Email*"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/warningTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="25dp"
+            android:visibility="gone"
+            android:textSize="14sp"
+            android:text=""/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            app:hintEnabled="false"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_border"
+            android:padding="10dp"
+                android:maxLines="1"
+            android:inputType="textPassword"
+            android:hint="Password*"
+            android:textSize="16sp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/warningTextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="25dp"
+            android:visibility="gone"
+            android:textSize="14sp"
+            android:text=""/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            app:hintEnabled="false"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmpasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_border"
+            android:padding="10dp"
+                android:maxLines="1"
+            android:inputType="textPassword"
+            android:hint="ConfirmPassword*"
+            android:textSize="16sp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/warningTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="25dp"
+            android:visibility="gone"
+            android:textSize="14sp"
+            android:text=""/>
+
+        <Button
+            android:id="@+id/btn_signup"
+            android:layout_width="330dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#0D8BFF"
+            android:text="Sign up"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="25dp"
+            android:visibility="gone"
+            android:textSize="14sp"
+            android:text=""/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/has_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:text="Already have an account? "/>
+
+            <TextView
+                android:id="@+id/login_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#0D8BFF"
+                android:textSize="15sp"
+                android:text="Login"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,18 @@
+<resources>
+  <string name="app_name">ZamVoyage</string>
+  <string name="navigation_drawer_open">Open navigation drawer</string>
+  <string name="navigation_drawer_close">Close navigation drawer</string>
+  <string name="action_settings">Settings</string>
+  <string name="title_home">Home</string>
+  <string name="title_search">Search</string>
+  <string name="title_plan">Plan a Trip</string>
+  <string name="title_explore">Explore</string>
+  <string name="empty_string"></string>
+  <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+
+  <!-- Mountains Content -->
+  <string name="mountain1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper nunc ac varius blandit. Phasellus enim diam, maximus non consectetur quis, congue vitae nunc. Nulla placerat consectetur accumsan. </string>
+
+  <string name="mountain2">Pellentesque accumsan vitae diam vel pharetra. Sed aliquet nibh nibh, a mattis arcu tempus quis. Aliquam dictum nisl vitae dolor cursus, nec eleifend lectus accumsan. In mollis tristique sapien non posuere. Sed varius risus at maximus placerat. Pellentesque vulputate lectus et sem venenatis consectetur. </string>
+  
+</resources>

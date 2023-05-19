@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "705504866256",
+    "firebase_url": "https://zamvoyage-9ac98-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "zamvoyage-9ac98",
+    "storage_bucket": "zamvoyage-9ac98.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705504866256:android:ba3441f47e00a728bc53d5",
+        "android_client_info": {
+          "package_name": "com.mindanao.zamvoyage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "705504866256-ch2l7cd8o7ss5s44epgffsno11gn1lgr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mindanao.zamvoyage",
+            "certificate_hash": "b48509fe5b4f1a24d3e654b431ab8b06e45713c6"
+          }
+        },
+        {
+          "client_id": "705504866256-3el0u2mf8od8ad5o8iskfehc0if9thlb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNQ7YVFNxF4EkFWjfknbJYy-el_nUuEmQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "705504866256-3el0u2mf8od8ad5o8iskfehc0if9thlb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

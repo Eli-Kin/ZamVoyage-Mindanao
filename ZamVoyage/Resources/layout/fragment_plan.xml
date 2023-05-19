@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/imageTest1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+           <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Plan Your Trip"
+                android:textSize="30sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:gravity="center" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:layout_marginTop="5dp"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:paddingRight="10dp"/>
+
+            <EditText
+                android:id="@+id/titleEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:background="@drawable/edittext_border"
+                android:layout_marginTop="5dp"
+                android:hint="Title*"
+                android:text="Your Title" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="From"
+                android:layout_marginTop="5dp"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:paddingRight="10dp"/>
+
+            <EditText
+                android:id="@+id/locationEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:background="@drawable/edittext_border"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:hint="From" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="To"
+                android:layout_marginTop="5dp"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:paddingRight="10dp"/>
+
+            <EditText
+                android:id="@+id/locationToEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:background="@drawable/edittext_border"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:hint="To" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:layout_marginTop="5dp"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:paddingRight="10dp"/>
+
+            <EditText
+                android:id="@+id/descriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:lines="5"
+                android:background="@drawable/edittext_border"
+                android:hint="Description"
+                android:gravity="top" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Departing Date and Time"
+                android:layout_marginTop="5dp"
+                android:textSize="22sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:paddingRight="10dp"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/selectDateButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_gradient"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:text="Select a Date" />
+
+            <Button
+                android:id="@+id/chooseTimeButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_gradient"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:text="Choose your Time" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Transportation"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:paddingRight="10dp"
+                android:gravity="center"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_border"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp">
+
+                <Spinner
+                    android:id="@+id/transportationSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Accommodation"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:paddingRight="10dp"
+                android:gravity="center"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_border"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp">
+
+                <Spinner
+                    android:id="@+id/accomodationSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="0dp"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_gradient"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_gravity="center"
+                android:text="Save" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

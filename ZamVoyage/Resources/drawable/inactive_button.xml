@@ -1,0 +1,14 @@
+﻿<shape xmlns:android="http://schemas.android.com/apk/res/android">
+  <!-- Gradient for the inactive button color -->
+  <gradient
+      android:startColor="#E0E0E0"
+      android:endColor="#BDBDBD"
+      android:angle="90"
+      android:type="linear" />
+
+  <!-- Transparent overlay to give the inactive effect -->
+  <solid android:color="#80000000" />
+
+  <corners android:radius="100dp" />
+</shape>
+
