@@ -47,11 +47,12 @@ namespace ZamVoyage.ContentList
             // populate your list of items here
             itemList = new List<ItemModel>
             {
-                new ItemModel { Image = Resource.Drawable.image1, Title = "Title 1", Description = "Bla Bla Bla"},
-                new ItemModel { Image = Resource.Drawable.image5, Title = "Title 2", Description = "Bla Bla Bla" },
-                new ItemModel { Image = Resource.Drawable.image1, Title = "Title 3", Description = "Bla Bla Bla" },
-                new ItemModel { Image = Resource.Drawable.image5, Title = "Title 4", Description = "Bla Bla Bla" },
-                new ItemModel { Image = Resource.Drawable.image1, Title = "Title 5", Description = "Bla Bla Bla" }
+                new ItemModel { Image = Resource.Drawable.casa_canelar_pension_1, Title = "Casa Canelar Pension", Description = "It is a cozy hotel located in the heart of Zamboanga City. The hotel offers comfortable rooms that are equipped with air conditioning, a flat-screen TV, and a private bathroom."},
+                new ItemModel { Image = Resource.Drawable.hamilton_business_inn_1, Title = "Hamilton Business Inn", Description = "It is a modern hotel located in the heart of Zamboanga City. The hotel offers comfortable rooms that are equipped with air conditioning, a flat-screen TV, and a private bathroom." },
+                new ItemModel { Image = Resource.Drawable.zamboanga_town_home_bed_and_breakfast_1, Title = "Zamboanga Town Home Bed and Breakfast", Description = "It is conveniently located in the popular City Proper area. The hotel has everything you need for a comfortable stay. Service-minded staff will welcome and guide you at the Zamboanga Town Home Bed and Breakfast." },
+                new ItemModel { Image = Resource.Drawable.garden_orchid_hotel_1, Title = "Garden Orchid Hotel", Description = "It is a luxurious hotel located in Governor Camins Avenue, Zamboanga City. The hotel offers a variety of rooms, ranging from deluxe rooms to suites, with rates starting at around PHP 4,000 per night." },
+                new ItemModel { Image = Resource.Drawable.grand_astoria_hotel_1, Title = "Grand Astoria Hotel", Description = "It is another popular hotel located in Mayor Jaldon Street, Zamboanga City. The hotel offers a variety of rooms, ranging from deluxe rooms to suites, with rates starting at around PHP 3,000 per night." },
+                new ItemModel { Image = Resource.Drawable.lantaka_hotel_by_the_sea_1, Title = "Lantaka Hotel by the Sea", Description = "It is a beautiful hotel located in Valderosa Street, Zamboanga City. The hotel offers a variety of rooms, ranging from deluxe rooms to suites, with rates starting at around PHP 3,000 per night." },
             };
 
             adapter = new MyAdapter(itemList);
@@ -116,14 +117,35 @@ namespace ZamVoyage.ContentList
 
                 public void OnClick(View v)
                 {
-                    if (TitleTextView.Text == "Title 1")
+                    if (TitleTextView.Text == "Casa Canelar Pension")
                     {
-                        var intent = new Intent(context, typeof(Mountain1_Content));
+                        var intent = new Intent(context, typeof(Casa_Canelar_Pension));
                         context.StartActivity(intent);
                     }
-                    else
+                    else if (TitleTextView.Text == "Hamilton Business Inn")
                     {
-                        // Open a different activity or do nothing
+                        var intent = new Intent(context, typeof(Hamilton_Business_Inn));
+                        context.StartActivity(intent);
+                    }
+                    else if (TitleTextView.Text == "Zamboanga Town Home Bed and Breakfast")
+                    {
+                        var intent = new Intent(context, typeof(Zamboanga_Town_Home_Bed_and_Breakfast));
+                        context.StartActivity(intent);
+                    }
+                    else if (TitleTextView.Text == "Grand Astoria Hotel")
+                    {
+                        var intent = new Intent(context, typeof(Grand_Astoria_Hotel));
+                        context.StartActivity(intent);
+                    }
+                    else if (TitleTextView.Text == "Lantaka Hotel by the Sea")
+                    {
+                        var intent = new Intent(context, typeof(Lantaka_Hotel_by_the_Sea));
+                        context.StartActivity(intent);
+                    }
+                    else if (TitleTextView.Text == "Garden Orchid Hotel")
+                    {
+                        var intent = new Intent(context, typeof(Garden_Orchid_Hotel));
+                        context.StartActivity(intent);
                     }
                 }
             }

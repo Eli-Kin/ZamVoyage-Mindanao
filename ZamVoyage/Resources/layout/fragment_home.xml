@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello! "
-        android:textSize="36sp"
+        android:textSize="38sp"
         android:layout_gravity="left"
         android:textStyle="bold"
         android:layout_marginLeft="10dp"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Where would you like to go?"
-        android:textSize="24sp"
+        android:textSize="25sp"
         android:layout_gravity="left"
         android:layout_marginLeft="10dp"
         android:textColor="#fff"/>
@@ -35,8 +35,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:gravity="center">
 
         <LinearLayout
@@ -47,19 +47,12 @@
             android:layout_weight="1">
 
             <refractored.controls.CircleImageView
+                android:id="@+id/attraction"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/splash_screen"
-                app:civ_border_width="2dp"
-                app:civ_border_color="#FF000000"/>
+                android:src="@drawable/once_island_1"
+                app:civ_border_width="1dp"/>
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Place"
-                android:textSize="15sp"
-                android:textColor="#000"/>
 
         </LinearLayout>
 
@@ -71,19 +64,11 @@
             android:layout_weight="1">
 
             <refractored.controls.CircleImageView
+                android:id="@+id/activities"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/splash_screen"
-                app:civ_border_width="2dp"
-                app:civ_border_color="#FF000000"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Place"
-                android:textSize="15sp"
-                android:textColor="#000"/>
+                android:src="@drawable/the_regatta_de_zamboanga_1"
+                app:civ_border_width="1dp"/>
 
         </LinearLayout>
 
@@ -95,19 +80,11 @@
             android:layout_weight="1">
 
             <refractored.controls.CircleImageView
+                android:id="@+id/amenities"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/splash_screen"
-                app:civ_border_width="2dp"
-                app:civ_border_color="#FF000000"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Place"
-                android:textSize="15sp"
-                android:textColor="#000"/>
+                android:src="@drawable/holy_smokes_2"
+                app:civ_border_width="1dp"/>
 
         </LinearLayout>
 
@@ -119,19 +96,11 @@
             android:layout_weight="1">
 
             <refractored.controls.CircleImageView
+                android:id="@+id/accommodation"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/splash_screen"
-                app:civ_border_width="2dp"
-                app:civ_border_color="#FF000000"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Place"
-                android:textSize="15sp"
-                android:textColor="#000"/>
+                android:src="@drawable/garden_orchid_hotel_1"
+                app:civ_border_width="1dp"/>
 
         </LinearLayout>
 
@@ -140,25 +109,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_weight="1"
-            android:id="@+id/linearLayout2">
+            android:layout_weight="1">
 
             <refractored.controls.CircleImageView
+                android:id="@+id/accessibility"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/splash_screen"
-                app:civ_border_width="2dp"
-                app:civ_border_color="#FF000000"
-                android:id="@+id/circleImageView2" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Place"
-                android:textSize="15sp"
-                android:textColor="#000"
-                android:id="@+id/textView2" />
+                android:src="@drawable/airplane"
+                app:civ_border_width="1dp"/>
 
         </LinearLayout>
 
@@ -168,7 +126,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/rounded_top_background">
 
         <!--<LinearLayout
@@ -238,7 +196,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Recommended"
+                        android:text="Popular"
                         android:textSize="21sp"
                         android:textColor="#000"
                         android:textStyle="bold"/>
@@ -260,12 +218,13 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/layout1"
+                        android:id="@+id/greatSantaCruzIsland"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical"
-                        android:layout_margin="5dp">
+                        android:layout_margin="5dp"
+                        android:clickable="true">
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
@@ -280,17 +239,18 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:scaleType="centerCrop"
-                                    android:src="@drawable/image5" />
+                                    android:src="@drawable/great_santa_cruz_island_1" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="Place Name"
+                                    android:text="Great Santa Cruz Island"
                                     android:textSize="14sp"
                                     android:textColor="#000"
                                     android:layout_alignParentBottom="true"
                                     android:gravity="center"
-                                    android:background="#EBF3FF" />
+                                    android:background="#EBF3FF" 
+                                    android:textStyle="bold"/>
 
                             </RelativeLayout>
 
@@ -299,7 +259,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/layout2"
+                        android:id="@+id/lantawanGrassland"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -319,17 +279,18 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:scaleType="centerCrop"
-                                    android:src="@drawable/image5" />
+                                    android:src="@drawable/lantawan_grassland_1" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="Place Name"
+                                    android:text="Lantawan Grassland"
                                     android:textSize="14sp"
                                     android:textColor="#000"
                                     android:layout_alignParentBottom="true"
                                     android:gravity="center"
-                                    android:background="#EBF3FF" />
+                                    android:background="#EBF3FF"
+                                    android:textStyle="bold"/>
 
                             </RelativeLayout>
 
@@ -345,7 +306,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/layout3"
+                        android:id="@+id/thePasonancaPark"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -364,17 +325,18 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:scaleType="centerCrop"
-                                    android:src="@drawable/image5" />
+                                    android:src="@drawable/the_pasonanca_park_1" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="Place Name"
+                                    android:text="The Pasonanca Park"
                                     android:textSize="14sp"
                                     android:textColor="#000"
                                     android:layout_alignParentBottom="true"
                                     android:gravity="center"
-                                    android:background="#EBF3FF" />
+                                    android:background="#EBF3FF"
+                                    android:textStyle="bold"/>
 
                             </RelativeLayout>
 
@@ -383,7 +345,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/layout4"
+                        android:id="@+id/theHermosaFestival"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -402,17 +364,18 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:scaleType="centerCrop"
-                                    android:src="@drawable/image5" />
+                                    android:src="@drawable/the_hermosa_festival_1" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="Place Name"
+                                    android:text="The Hermosa Festival"
                                     android:textSize="14sp"
                                     android:textColor="#000"
                                     android:layout_alignParentBottom="true"
                                     android:gravity="center"
-                                    android:background="#EBF3FF" />
+                                    android:background="#EBF3FF" 
+                                    android:textStyle="bold"/>
 
                             </RelativeLayout>
 
@@ -427,7 +390,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/layout5"
+                        android:id="@+id/knickerbocker"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -446,17 +409,18 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:scaleType="centerCrop"
-                                    android:src="@drawable/image5" />
+                                    android:src="@drawable/knickerbocker_1" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="Place Name"
+                                    android:text="Knickerbocker"
                                     android:textSize="14sp"
                                     android:textColor="#000"
                                     android:layout_alignParentBottom="true"
                                     android:gravity="center"
-                                    android:background="#EBF3FF" />
+                                    android:background="#EBF3FF" 
+                                    android:textStyle="bold"/>
 
                             </RelativeLayout>
 
@@ -464,7 +428,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/layout6"
+                        android:id="@+id/kccMallDeZamboanga"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -483,17 +447,18 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:scaleType="centerCrop"
-                                    android:src="@drawable/image5" />
+                                    android:src="@drawable/kcc_mall_de_zamboanga_1" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="Place Name"
+                                    android:text="KCC Mall De Zamboanga"
                                     android:textSize="14sp"
                                     android:textColor="#000"
                                     android:layout_alignParentBottom="true"
                                     android:gravity="center"
-                                    android:background="#EBF3FF" />
+                                    android:background="#EBF3FF" 
+                                    android:textStyle="bold"/>
 
                             </RelativeLayout>
 

@@ -21,6 +21,8 @@ using Android.Gms.Tasks;
 using Firebase.Firestore;
 using static Java.Util.Jar.Attributes;
 using static ZamVoyage.Profile.ProfileActivity;
+using ZamVoyage.Content.Mountains;
+using Refractored.Controls;
 
 namespace ZamVoyage
 {
@@ -35,6 +37,8 @@ namespace ZamVoyage
         private RelativeLayout fragmentContainer;
         private FirebaseAuth firebaseAuth;
         private const int PROFILE_ACTIVITY_REQUEST = 1;
+        LinearLayout greatSantaCruzIsland, lantawanGrassland, thePasonancaPark, theHermosaFestival, knickerbocker, kccMallDeZamboanga;
+        CircleImageView attraction, activities, amenities, accommodation, accessibility;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -62,6 +66,75 @@ namespace ZamVoyage
                 StartActivity(intent);
             };
 
+            attraction = view.FindViewById<CircleImageView>(Resource.Id.attraction);
+            activities = view.FindViewById<CircleImageView>(Resource.Id.activities);
+            amenities = view.FindViewById<CircleImageView>(Resource.Id.amenities);
+            accommodation = view.FindViewById<CircleImageView>(Resource.Id.accommodation);
+            accessibility = view.FindViewById<CircleImageView>(Resource.Id.accessibility);
+
+            attraction.Click += delegate
+            {
+                Intent intent = new Intent(this.Activity, typeof(ContentList.Attraction_List));
+                StartActivity(intent);
+            };
+            activities.Click += delegate
+            {
+                Intent intent = new Intent(this.Activity, typeof(ContentList.Activity_List));
+                StartActivity(intent);
+            };
+            amenities.Click += delegate
+            {
+                Intent intent = new Intent(this.Activity, typeof(ContentList.Amenity_List));
+                StartActivity(intent);
+            };
+            accommodation.Click += delegate
+            {
+                Intent intent = new Intent(this.Activity, typeof(ContentList.Accommodation_List));
+                StartActivity(intent);
+            };
+            accessibility.Click += delegate
+            {
+                Intent intent = new Intent(this.Activity, typeof(ContentList.Accessibility_List));
+                StartActivity(intent);
+            };
+
+            greatSantaCruzIsland = view.FindViewById<LinearLayout>(Resource.Id.greatSantaCruzIsland);
+            lantawanGrassland = view.FindViewById<LinearLayout>(Resource.Id.lantawanGrassland);
+            thePasonancaPark = view.FindViewById<LinearLayout>(Resource.Id.thePasonancaPark);
+            theHermosaFestival = view.FindViewById<LinearLayout>(Resource.Id.theHermosaFestival);
+            knickerbocker = view.FindViewById<LinearLayout>(Resource.Id.knickerbocker);
+            kccMallDeZamboanga = view.FindViewById<LinearLayout>(Resource.Id.kccMallDeZamboanga);
+
+            greatSantaCruzIsland.Click += delegate
+            {
+                Intent intent = new Intent(this.Activity, typeof(Great_Santa_Cruz_Island));
+                StartActivity(intent);
+            };
+            lantawanGrassland.Click += delegate
+            {
+                Intent intent = new Intent(this.Activity, typeof(Lantawan_Grassland));
+                StartActivity(intent);
+            };
+            thePasonancaPark.Click += delegate
+            {
+                Intent intent = new Intent(this.Activity, typeof(The_Pasonanca_Park));
+                StartActivity(intent);
+            };
+            theHermosaFestival.Click += delegate
+            {
+                Intent intent = new Intent(this.Activity, typeof(Hermosa_Festival));
+                StartActivity(intent);
+            };
+            knickerbocker.Click += delegate
+            {
+                Intent intent = new Intent(this.Activity, typeof(Knickerbocker));
+                StartActivity(intent);
+            };
+            kccMallDeZamboanga.Click += delegate
+            {
+                Intent intent = new Intent(this.Activity, typeof(KCC_Mall_de_Zamboanga));
+                StartActivity(intent);
+            };
             //mountainFragment = new Mountain_Fragment();
             //waterfallFragment = new Waterfalls_Fragment();
             //beachFragment = new Beach_Fragment();

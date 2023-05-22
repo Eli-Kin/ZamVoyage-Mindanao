@@ -89,6 +89,7 @@ namespace ZamVoyage.Bottom_SideBar
                 currentPasswordEditText.Enabled = false;
                 newPasswordEditText.Enabled = false;
                 repeatNewPasswordEditText.Enabled = false;
+                deleteAccountButton.Enabled = false;
             }
         }
 
@@ -377,7 +378,6 @@ namespace ZamVoyage.Bottom_SideBar
 
             firstName = snapshot.Get("firstName").ToString();
             lastName = snapshot.Get("lastName").ToString();
-            profPic = snapshot.Get("profilePicture").ToString();
             email = snapshot.Get("email") != null ? snapshot.Get("email").ToString() : "";
 
             editTextNewEmail.Text = currentUser.Email;

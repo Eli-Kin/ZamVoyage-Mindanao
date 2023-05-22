@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                android:elevation="4dp"
+                android:padding="5dp"
+                android:paddingBottom="10dp"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Additional Activities"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:textColor="#0D8BFF"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/indicator1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@android:color/transparent"
+                        app:tabBackground="@drawable/tab_selector"
+                        app:tabGravity="center"
+                        app:tabIndicatorHeight="0dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/prgph1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="•	Island Hoping at Once Islas \u0028Eleven Islands\u0029"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="15dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/indicator2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@android:color/transparent"
+                        app:tabBackground="@drawable/tab_selector"
+                        app:tabGravity="center"
+                        app:tabIndicatorHeight="0dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/prgph2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="•	Explore Sta. Cruz Island's Pink Beach and Mangroves"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/indicator3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@android:color/transparent"
+                        app:tabBackground="@drawable/tab_selector"
+                        app:tabGravity="center"
+                        app:tabIndicatorHeight="0dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/prgph3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="•	Swimming: You can go swimming at Merloquet Falls, which is a natural waterfall with a deep pool at the bottom."
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/indicator5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@android:color/transparent"
+                        app:tabBackground="@drawable/tab_selector"
+                        app:tabGravity="center"
+                        app:tabIndicatorHeight="0dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/prgph5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="•	Visit Camp Limbaga"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/indicator6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@android:color/transparent"
+                        app:tabBackground="@drawable/tab_selector"
+                        app:tabGravity="center"
+                        app:tabIndicatorHeight="0dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/prgph6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="•	Bird Watching at ZSCMT Bird Sanctuary"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/indicator7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@android:color/transparent"
+                        app:tabBackground="@drawable/tab_selector"
+                        app:tabGravity="center"
+                        app:tabIndicatorHeight="0dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/prgph7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="•	Hiking: You can go hiking at Pasonanca Park, which has a well-maintained trail and offers a scenic view of the city and Mt. Abong-Abong, which offers a panoramic view of the city and the sea."
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager9"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/indicator9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@android:color/transparent"
+                        app:tabBackground="@drawable/tab_selector"
+                        app:tabGravity="center"
+                        app:tabIndicatorHeight="0dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/prgph9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="•	Sightseeing: You can visit the Fort Pilar Shrine and Museum, which is a historical landmark that showcases the city's rich cultural heritage."
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

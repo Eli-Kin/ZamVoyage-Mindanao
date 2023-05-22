@@ -464,7 +464,6 @@ namespace ZamVoyage.Profile
 
         public void OnSuccess(Java.Lang.Object result)
         {
-
             // Dismiss the progress dialog
             progressDialog.Dismiss();
 
@@ -474,21 +473,45 @@ namespace ZamVoyage.Profile
             firstName = snapshot.Get("firstName").ToString();
             lastName = snapshot.Get("lastName").ToString();
             userName = snapshot.Get("userName").ToString();
-            profPic = snapshot.Get("profilePicture").ToString();
             email = snapshot.Get("email") != null ? snapshot.Get("email").ToString() : "";
+
+            if (snapshot.Contains("profilePicture"))
+            {
+                var profilePictureObj = snapshot.Get("profilePicture");
+                if (profilePictureObj != null)
+                {
+                    profPic = profilePictureObj.ToString();
+                }
+                else
+                {
+                    profPic = null; // Set profPic to null if the value is null in the database
+                }
+            }
+            else
+            {
+                profPic = null; // Set profPic to null if the "profilePicture" field is not present in the snapshot
+            }
 
             if (email != null)
             {
                 string fullName = firstName + " " + lastName;
 
-                //Store the original image path for comparison
-               originalImagePath = profPic;
-               System.Diagnostics.Debug.WriteLine("Original Image Path In Success: " + originalImagePath);
+                // Store the original image path for comparison
+                originalImagePath = profPic;
+                System.Diagnostics.Debug.WriteLine("Original Image Path In Success: " + originalImagePath);
 
-                profilePic.SetImageBitmap(BitmapFactory.DecodeFile(profPic));
+                if (!string.IsNullOrEmpty(profPic))
+                {
+                    profilePic.SetImageBitmap(BitmapFactory.DecodeFile(profPic));
+                }
+                else
+                {
+                    // Set a default profile picture or a placeholder image
+                    profilePic.SetImageResource(Resource.Drawable.logo_circle);
+                }
+
                 user_name.Text = fullName;
                 user_email.Text = currentUser.Email;
-
             }
         }
 

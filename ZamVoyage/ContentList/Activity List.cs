@@ -15,6 +15,7 @@ using Toolbar = Android.Support.V7.Widget.Toolbar;
 using AndroidX.AppCompat.Widget;
 using Android.Graphics;
 using ZamVoyage.Content.Mountains;
+using ZamVoyage.Content.Activities;
 
 namespace ZamVoyage.ContentList
 {
@@ -41,17 +42,25 @@ namespace ZamVoyage.ContentList
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeAsUpIndicator(backArrowDrawable);
 
+            Button additionalActivities = FindViewById<Button>(Resource.Id.additionalActivities);
+
+            additionalActivities.Click += delegate
+             {
+                 Intent intent = new Intent(this, typeof(Additional_Activities));
+                 StartActivity(intent);
+             };
+
             recyclerView = FindViewById<RecyclerView>(Resource.Id.recycler_view);
             recyclerView.SetLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.Vertical, false));
 
             // populate your list of items here
             itemList = new List<ItemModel>
             {
-                new ItemModel { Image = Resource.Drawable.image1, Title = "Title 1", Description = "Bla Bla Bla"},
-                new ItemModel { Image = Resource.Drawable.image5, Title = "Title 2", Description = "Bla Bla Bla" },
-                new ItemModel { Image = Resource.Drawable.image1, Title = "Title 3", Description = "Bla Bla Bla" },
-                new ItemModel { Image = Resource.Drawable.image5, Title = "Title 4", Description = "Bla Bla Bla" },
-                new ItemModel { Image = Resource.Drawable.image1, Title = "Title 5", Description = "Bla Bla Bla" }
+                new ItemModel { Image = Resource.Drawable.the_hermosa_festival_1, Title = "The Hermosa Festival", Description = "One of the most popular cultural events in Zamboanga City. It is celebrated every October in honor of the city's patron saint, Nuestra Señora del Pilar."},
+                new ItemModel { Image = Resource.Drawable.the_regatta_de_zamboanga_1, Title = "The Regatta de Zamboanga", Description = "A popular annual boat race that takes place in Zamboanga City, Philippines. It is typically held in March and is one of the most colorful and exciting events in the city." },
+                new ItemModel { Image = Resource.Drawable.dia_de_zamboanga_1, Title = "Dia De Zamboanga", Description = "It is the biggest festival in Zamboanga City and is celebrated annually on February 26. The festival is a celebration of the city's founding and its rich cultural heritage." },
+                new ItemModel { Image = Resource.Drawable.flores_de_mayo_1, Title = "Flores de Mayo", Description = "“Flowers of May” is the direct translation of this festival’s Spanish name. It is a monthlong revelry that is held during May annually, and it is celebrated in honor of the Virgin Mary." },
+                new ItemModel { Image = Resource.Drawable.zamboanga_city_bird_festival_1, Title = "Zamboanga City Bird Festival", Description = "Considered as the country’s biggest celebration of avifaunal diversity, Zamboanga City Bird Festival is celebrated by birdwatchers, conservationists, and tourists from local and foreign origins." }
             };
 
             adapter = new MyAdapter(itemList);
@@ -116,14 +125,30 @@ namespace ZamVoyage.ContentList
 
                 public void OnClick(View v)
                 {
-                    if (TitleTextView.Text == "Title 1")
+                    if (TitleTextView.Text == "The Hermosa Festival")
                     {
-                        var intent = new Intent(context, typeof(Mountain1_Content));
+                        var intent = new Intent(context, typeof(Hermosa_Festival));
+                        context.StartActivity(intent);
+                    } 
+                    else if (TitleTextView.Text == "The Regatta de Zamboanga")
+                    {
+                        var intent = new Intent(context, typeof(The_Regatta_De_Zamboanga));
                         context.StartActivity(intent);
                     }
-                    else
+                    else if (TitleTextView.Text == "Dia De Zamboanga")
                     {
-                        // Open a different activity or do nothing
+                        var intent = new Intent(context, typeof(Dia_De_Zamboanga));
+                        context.StartActivity(intent);
+                    }
+                    else if (TitleTextView.Text == "Flores de Mayo")
+                    {
+                        var intent = new Intent(context, typeof(Flores_De_Mayo));
+                        context.StartActivity(intent);
+                    }
+                    else if (TitleTextView.Text == "Zamboanga City Bird Festival")
+                    {
+                        var intent = new Intent(context, typeof(Zamboanga_City_Bird_Festival));
+                        context.StartActivity(intent);
                     }
                 }
             }

@@ -22,6 +22,7 @@ using Google.Android.Material.Navigation;
 using Google.Android.Material.Snackbar;
 using Refractored.Controls;
 using ZamVoyage.Bottom_SideBar;
+using ZamVoyage.Content.History;
 using ZamVoyage.ContentList;
 using ZamVoyage.Fragments;
 using ZamVoyage.Log;
@@ -112,7 +113,7 @@ namespace ZamVoyage
             else
             {
                 Email.Visibility = ViewStates.Gone;
-                Name.Text = "Hello Voyager?";
+                Name.Text = "Hello Voyager!";
             }
 
             // Get an instance of the fragment manager
@@ -212,7 +213,8 @@ namespace ZamVoyage
             }
             else if (id == Resource.Id.nav_history)
             {
-
+                Intent intent = new Intent(this, typeof(History));
+                StartActivity(intent);
             }
             else if (id == Resource.Id.nav_attraction)
             {
@@ -383,20 +385,45 @@ namespace ZamVoyage
 
             firstName = snapshot.Get("firstName").ToString();
             lastName = snapshot.Get("lastName").ToString();
-            profPic = snapshot.Get("profilePicture").ToString();
             email = snapshot.Get("email") != null ? snapshot.Get("email").ToString() : "";
 
+            if (snapshot.Contains("profilePicture"))
+            {
+                var profilePictureObj = snapshot.Get("profilePicture");
+                if (profilePictureObj != null)
+                {
+                    profPic = profilePictureObj.ToString();
+                }
+                else
+                {
+                    profPic = null; // Set profPic to null if the value is null in the database
+                }
+            }
+            else
+            {
+                profPic = null; // Set profPic to null if the "profilePicture" field is not present in the snapshot
+            }
 
             if (email != null)
             {
                 string fullName = firstName + " " + lastName;
 
-                profilePic.SetImageBitmap(BitmapFactory.DecodeFile(profPic));
+                if (!string.IsNullOrEmpty(profPic))
+                {
+                    // Set the profile picture
+                    profilePic.SetImageBitmap(BitmapFactory.DecodeFile(profPic));
+                }
+                else
+                {
+                    // Set a default profile picture or a placeholder image
+                    profilePic.SetImageResource(Resource.Drawable.logo_circle);
+                }
+
                 Name.Text = fullName;
                 Email.Text = currentUser.Email;
             }
-
         }
+
     }
 }
 

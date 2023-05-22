@@ -82,18 +82,26 @@ namespace ZamVoyage.Fragments
                 if (fragment.hasFavorites)
                 {
                     List<FavoriteItem> favoritesItems = new List<FavoriteItem>();
+                    HashSet<string> documentIds = new HashSet<string>(); // Store unique document IDs
 
                     foreach (var documentSnapshot in querySnapshot.Documents)
                     {
-                        FavoriteItem favoriteItem = new FavoriteItem
-                        {
-                            DocumentId = documentSnapshot.Id,
-                            Title = documentSnapshot.GetString("Title"),
-                            ImagePath = documentSnapshot.GetString("ImagePath"),
-                            Description = documentSnapshot.GetString("Description")
-                        };
+                        string documentId = documentSnapshot.Id;
 
-                        favoritesItems.Add(favoriteItem);
+                        // Check if document ID already exists
+                        if (!documentIds.Contains(documentId))
+                        {
+                            FavoriteItem favoriteItem = new FavoriteItem
+                            {
+                                DocumentId = documentId,
+                                Title = documentSnapshot.GetString("Title"),
+                                ImagePath = documentSnapshot.GetString("ImagePath"),
+                                Description = documentSnapshot.GetString("Description")
+                            };
+
+                            favoritesItems.Add(favoriteItem);
+                            documentIds.Add(documentId); // Add document ID to the list
+                        }
                     }
 
                     fragment.ShowFavorites(favoritesItems);
@@ -104,7 +112,6 @@ namespace ZamVoyage.Fragments
                 }
             }
         }
-
 
         public void ShowFavorites(List<FavoriteItem> favoritesItems)
         {

@@ -26,10 +26,44 @@
         android:textColor="#000"
         android:textStyle="bold"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#636363"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp" />
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_weight="1"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#636363"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/additionalActivities"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        app:backgroundTint="@null"
+        android:background="@drawable/button_gradient"
+        android:text="Additional Activities"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="30dp"/>
 
 </LinearLayout>

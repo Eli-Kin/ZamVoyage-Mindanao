@@ -47,11 +47,12 @@ namespace ZamVoyage.ContentList
             // populate your list of items here
             itemList = new List<ItemModel>
             {
-                new ItemModel { Image = Resource.Drawable.image1, Title = "Title 1", Description = "Bla Bla Bla"},
-                new ItemModel { Image = Resource.Drawable.image5, Title = "Title 2", Description = "Bla Bla Bla" },
-                new ItemModel { Image = Resource.Drawable.image1, Title = "Title 3", Description = "Bla Bla Bla" },
-                new ItemModel { Image = Resource.Drawable.image5, Title = "Title 4", Description = "Bla Bla Bla" },
-                new ItemModel { Image = Resource.Drawable.image1, Title = "Title 5", Description = "Bla Bla Bla" }
+                new ItemModel { Image = Resource.Drawable.airplane, Title = "Zamboanga International Airport", Description = "The airport serves the Zamboanga Peninsula region and is a hub for several airlines, including Cebu Pacific, Philippine Airlines, and AirAsia. "},
+                new ItemModel { Image = Resource.Drawable.ship, Title = "Zamboanga International Seaport", Description = "The seaport is one of the busiest in the region and serves as a gateway to nearby destinations such as Basilan, Jolo, and Tawi-Tawi." },
+                new ItemModel { Image = Resource.Drawable.bus, Title = "Bus Terminals", Description = "The terminal has several bus bays and ticketing counters. The terminal serves several bus companies that operate routes to other cities in Mindanao, including Dapitan, Dipolog, " },
+                new ItemModel { Image = Resource.Drawable.motor_rental, Title = "Zamboanga Motor Rental", Description = "A company in Zamboanga City offer a range of motorcycles and scooters for rent, including small and large motorcycles, automatic and manual scooters, and dirt bikes." },
+                new ItemModel { Image = Resource.Drawable.taxi, Title = "Taxi", Description = "Most taxis are equipped with air conditioning, and many have a small screen displaying the fare and distance traveled." },
+                new ItemModel { Image = Resource.Drawable.tricycle, Title = "Tricycle", Description = "The fare for a tricycle ride is usually negotiated with the driver, and it's important to agree on the fare before starting the ride." },
             };
 
             adapter = new MyAdapter(itemList);
@@ -116,14 +117,35 @@ namespace ZamVoyage.ContentList
 
                 public void OnClick(View v)
                 {
-                    if (TitleTextView.Text == "Title 1")
+                    if (TitleTextView.Text == "Zamboanga International Airport")
                     {
-                        var intent = new Intent(context, typeof(Mountain1_Content));
+                        var intent = new Intent(context, typeof(Zamboanga_International_Airport));
                         context.StartActivity(intent);
                     }
-                    else
+                    else if (TitleTextView.Text == "Zamboanga International Seaport")
                     {
-                        // Open a different activity or do nothing
+                        var intent = new Intent(context, typeof(Zamboanga_International_Seaport));
+                        context.StartActivity(intent);
+                    }
+                    else if (TitleTextView.Text == "Bus Terminals")
+                    {
+                        var intent = new Intent(context, typeof(Bus_Terminals));
+                        context.StartActivity(intent);
+                    }
+                    else if (TitleTextView.Text == "Zamboanga Motor Rental")
+                    {
+                        var intent = new Intent(context, typeof(Zamboanga_Motor_Rental));
+                        context.StartActivity(intent);
+                    }
+                    else if (TitleTextView.Text == "Taxi")
+                    {
+                        var intent = new Intent(context, typeof(Taxi));
+                        context.StartActivity(intent);
+                    }
+                    else if (TitleTextView.Text == "Tricycle")
+                    {
+                        var intent = new Intent(context, typeof(Tricycle));
+                        context.StartActivity(intent);
                     }
                 }
             }

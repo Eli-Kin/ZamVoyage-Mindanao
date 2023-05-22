@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                android:elevation="4dp"
+                android:padding="5dp"
+                android:paddingBottom="10dp"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="History"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:textColor="#0D8BFF"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/itemImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/history_1"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:id="@+id/prgph1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/history_paragraph_1"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
+                android:textColor="#000"
+                android:textSize="17sp"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:id="@+id/prgph2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/history_paragraph_2"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingRight="15dp"
+                android:textColor="#000"
+                android:textSize="17sp"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:id="@+id/prgph3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/history_paragraph_3"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingRight="15dp"
+                android:textColor="#000"
+                android:textSize="17sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/itemImage1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/history_2"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:id="@+id/prgph4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/history_paragraph_4"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingRight="15dp"
+                android:textColor="#000"
+                android:textSize="17sp"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:id="@+id/prgph5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/history_paragraph_5"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingRight="15dp"
+                android:textColor="#000"
+                android:textSize="17sp"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:id="@+id/prgph6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/history_paragraph_6"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:textColor="#000"
+                android:textSize="17sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
