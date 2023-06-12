@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/imagetest6">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent"
+        android:elevation="4dp"
+        android:padding="5dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About Us"
+                android:textSize="30sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:gravity="center" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="10dp"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:id="@+id/prgph1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_us_paragraph_1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#000"
+                android:textSize="19sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Who Develop ZamVoyage?"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:id="@+id/prgph2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_us_paragraph_2"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drew Ramos"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:id="@+id/prgph3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_us_paragraph_3"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Elijah King de Dios"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:id="@+id/prgph4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_us_paragraph_4"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Raphy Lloyd Mangaya"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:id="@+id/prgph5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_us_paragraph_5"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Angel Paz Sevilla"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:id="@+id/prgph6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_us_paragraph_6"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hernani Malagiok"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:id="@+id/prgph7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_us_paragraph_7"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jefferson Pavo"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:id="@+id/prgph8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_us_paragraph_8"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

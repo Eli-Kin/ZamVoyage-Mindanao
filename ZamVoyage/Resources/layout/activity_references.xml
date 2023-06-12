@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/imagetest6">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent"
+        android:elevation="4dp"
+        android:padding="5dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="References"
+                android:textSize="30sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:gravity="center" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Attractions"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Great Santa Cruz Island"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About author: The Pinoy TravelerI’m Marco Dennis. (n.d.). Santa Cruz Island : The Pink Beach in Zamboanga City. The Pinoy Traveler. https://www.thepinoytraveler.com/2019/12/santa-cruz-island-pink-beach-in.html \n\n Wikimedia Foundation. (2023, April 4). Great Santa Cruz Island. Wikipedia. https://en.wikipedia.org/wiki/Great_Santa_Cruz_Island"
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Once Islas"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Villareal, M. (2022, September 29). Once Islas Travel Guide: Zamboanga’s Hidden Gem. Out of Town Blog. https://outoftownblog.com/once-islas-travel-guide/ "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lantawan Grassland"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lantawan grassland, Zamboanga City. Wolf Eyes Blog. (n.d.). http://wolfeyestravel.blogspot.com/2017/12/lantawan-grassland-zamboanga-city.html \n\nLog into Facebook. Facebook. (n.d.). https://www.facebook.com/imageszamboanga/posts/the-new-lantawan-grassland-view-day-time/2700630180188969/"
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Merloquet Falls"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Morion, T. (n.d.). Zamboanga City: The Quiet Beauty that is Merloquet Falls. Traveling Morion | Travel + Photography. https://www.travelingmorion.com/2016/02/zamboanga-city-merloquet-falls.html "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Fort Pilar Shrine and Museum"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="File:Fort Pilar shrine El Altar.jpg - Wikimedia Commons. (n.d.). https://commons.wikimedia.org/wiki/File:Fort_Pilar_Shrine_el_Altar.JPG \n\nRicamora, Pi. (n.d.). Fort Pilar Shrine: Eve of Fiesta Pilar (night shots) @OCTOBER 2011. FORT PILAR SHRINE: EVE OF FIESTA PILAR (NIGHT SHOTS) @OCTOBER 2011. http://inpinaysciudad.blogspot.com/2013/10/fort-pilar-shrine-eve-of-fiesta-pilar.html \n\nWikimedia Foundation. (2023a, February 15). Fort Pilar. Wikipedia. https://en.wikipedia.org/wiki/Fort_Pilar "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Metropolitan Cathedral of the Immaculate Conception"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Metropolitan cathedral of the immaculate conception. Vigattin Tourism (ARTICLES) - Philippines. (n.d.). https://www.vigattintourism.com/tourism/articles/Metropolitan-Cathedral-of-the-Immaculate-Conception \n\nImmaculate Conception Cathedral, ZC circa 1998. IMMACULATE CONCEPTION CATHEDRAL, ZC CIRCA 1998. (n.d.). http://inpinaysfootsteps.blogspot.com/2011/09/immaculate-conception-cathedral-zc.html "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Zamboanga City Hall"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About the authorHannah MallorcaContributing WriterHannah finds solace in reading books, Mallorca, H., &amp;amp; Writer, C. (2022, June 4). Zamboanga City: What makes this historic and cultural haven a must-visit for hodophiles. Philstar Life. https://philstarlife.com/living/280559-zamboanga-city-tourist-destinations?page=3 \n\nZamboanga City Hall lights up for peace!. csz97 Blog Folio. (n.d.). https://csz97.blogspot.com/2014/12/zamboanga-city-hall-lights-up-for-peace.html "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Pasonanca Tree House"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zipping through Zamboanga Hermosa in a day. Wazzup Pilipinas News and Events. (n.d.). https://www.wazzuppilipinas.com/2014/04/zipping-through-zamboanga-hermosa-in-day.html \n\nFile:Pasonanca-pool.jpg. File:Pasonanca-pool.jpg - Philippines. (n.d.). https://zamboanga.com/z/index.php?title=File%3APasonanca-pool.jpg \n\nAdventuRoj, A., says:, R., says:, A. A., says:, garmin nuvi 1300, &amp;amp; says:, P. (2012, April 1). Pasonanca Park, Zamboanga City: The Little Baguio of the South. The Adventures of AdventuRoj! https://adventuroj.com/2012/03/28/pasonanca-park-zamboanga-city-the-little-baguio-of-the-south/ \n\nVisiting Southwestern Mindanao (Zamboanga City). the viewing deck. (n.d.). http://www.theviewingdeck.com/2011/03/visiting-zamboanga-basilans-tourism.html "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paseo del Mar"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Category:Paseo del Mar (Zamboanga City). Wikimedia Commons. (n.d.). https://commons.wikimedia.org/wiki/Category:Paseo_del_Mar_(Zamboanga_City) \n\nViews of Paseo del Mar. Vigattin Tourism (ARTICLES) - Philippines. (n.d.-b). https://www.vigattintourism.com/tourism/articles/Views-of-Paseo-Del-Mar \n\nFacebook.com/kennethdelrosario. (2023, April 11). Zamboanga Hermosa Festival Highlights Paseo del mar, the city’s newest Leisure Park. Getaway.PH. https://getaway.ph/blog/leisure/zamboanga-hermosa-festival-highlights-paseo-del-mar-the-citys-newest-leisure-park/ \n\nAdventuRoj, A., Says:, T., says:, spongyroj30, says:, V. B., says:, A. A., says:, R. P. L., &amp; Says:, A. A. A. (2012, April 1). Nightfall at Paseo del Mar and the musical fountain. The Adventures of AdventuRoj! https://adventuroj.com/2012/03/31/nightfall-at-paseo-del-mar-zamboanga-city/ "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accommodations"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Casa Calendar Pension"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rosenstein, R. R. (2020, September 29). Agoda.com. https://www.agoda.com/casa-canelar-pension/hotel/zamboanga-city-ph.html?cid=1844104 \n\nHamilton Business Inn – Hotel Reviews (Zamboanga City, Philippines) mo. Tripadvisor. (n.d.-c). https://www.tripadvisor.com/Hotel_Review-g580109-d8611889-Reviews-Hamilton_Business_Inn-Zamboanga_City_Zamboanga_Sibugay_Province_Zamboanga_Peninsula_Mi.html "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zamboanga Town Home Bed and Breakfast"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zamboanga Town Home – Hostel Reviews &amp;amp; Price comparison (Zamboanga City, Philippines) mo. Tripadvisor. (n.d.-h). https://www.tripadvisor.com.ph/Hotel_Review-g580109-d7068519-Reviews-Zamboanga_Town_Home-Zamboanga_City_Zamboanga_Sibugay_Province_Zamboanga_Peninsula_Mind.html#/media/7068519/116009845:p/?albumid=101&amp;amp;type=0&amp;amp;category=101 "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Garden Orchid Hotel"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Garden Orchid Hotel $54 ($̶9̶7̶) – updated 2023 prices &amp;amp; reviews – Zamboanga City, Philippines mo. Tripadvisor. (n.d.-a). https://www.tripadvisor.com/Hotel_Review-g580109-d571829-Reviews-Garden_Orchid_Hotel-Zamboanga_City_Zamboanga_Sibugay_Province_Zamboanga_Peninsula_Minda.html "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grand Astoria Hotel"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jaime_Sydney. (2022, October 19). Nice stay – review of grand astoria hotel, Zamboanga City, Philippines. Tripadvisor. https://www.tripadvisor.com/ShowUserReviews-g580109-d1728043-r865104455-Grand_Astoria_Hotel-Zamboanga_City_Zamboanga_Sibugay_Province_Zamboanga_Peninsul.html "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lantaka Hotel by the Sea"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lantaka Hotel by the sea-zamboanga updated 2023 room price-reviews &amp;amp; deals. Zamboanga Updated 2023 Room Price-Reviews &amp;amp; Deals | Trip.com. (n.d.-a). https://www.trip.com/hotels/zamboanga-hotel-detail-10100983/lantaka-hotel-by-the-sea/ "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jardin de La Vina Hotel"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jardin de la Vina Hotel – updated 2023 prices (Philippines/mindanao). Tripadvisor. (n.d.-g). https://www.tripadvisor.co.uk/Hotel_Review-g580109-d1515929-Reviews-Jardin_De_La_Vina_Hotel-Zamboanga_City_Zamboanga_Sibugay_Province_Zamboanga_Peninsula_.html "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amenities"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Knickerbocker"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login • instagram. (n.d.). https://www.instagram.com/p/BV-LNBzjGpD/?igshid=MzRlODBiNWFlZA \n\nErispe, R. (2023, March 10). Regil Erispe on Instagram: “Knickerbocker 😋😋😋😋 Zamboanga City, Philippines #zamboangacity #knickerbocker #food #Mindanao #dessert #foodie #fruits #lifeofadventure #philippines #itsmorefuninthephilippines #choosephilippines #delicious #asian #awesomeearth #bestplacetogo #beautifuldestinations #picoftheday #adventure #photography #backpacker #Like4like #follow #instagram #photooftheday #travel #traveler #liveauthentic #travelstroke #vacation.” Instagram. https://www.instagram.com/p/BdKVx_Enxd6/?igshid=MzRlODBiNWFlZA \n\nRingel, G. (2023, May 12). Gelo Ringel on Instagram: “A must try in Zamboanga .... ‘Knicker Bocker’ - healthy NA refreshing pa. #gelolakwatsero2017 #wheninzamboanga #knickerbocker #bonggazamboanga #travellocal #experiencephilippines #pinoytravel.” Instagram. https://www.instagram.com/p/BYSzcEBjZZ_/?igshid=MzRlODBiNWFlZA "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Satti"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="See, D. (2023, March 14). Day see on Instagram: “your zamboanga trip will never be complete without trying their famous beef satti, an authentic dish in Zamboanga that has a diverse history and influence from its surrounding islands with Muslim traditions. it’s spicy and a little bit sweet. but it’s actually more on the spicy side, too spicy that it can sometimes make you cough a bit. you know that feeling when you tasted a dish that has too much pepper on it that it makes your throat itchy. 😂 Pero Lami Siya, labi na ang beef stew.. this one cost 70 pesos. 4beef stew with 2 puso na siya. 🙂 must try when you visit Zambo. 🙂 #satti #muslimfood #travel #travelph #musttry #samboanga #explore #food #foodstagram #foodblogger #beefstew.” Instagram. https://www.instagram.com/p/CpxIM0aJ76n/?igshid=MzRlODBiNWFlZA \n\nMae | Cooking | Eating | Loving Life! (2023, May 17). Mae: Cooking: Eating: Loving life! on Instagram: “☀️🍢🍧🍹 summer vibes in London town! satti de Zamboanga BBQ and this dip hits every BBQ spot! now pass the rice please 😋 __ originated from Zamboanga, Philippines. eaten for breakfast with ‘Puso’ boiled rice wrapped in palm leaves....I know what you’re thinking but Filipinos eat rice all day long 😂😂. this dish is usually beef or chicken, marinate overnight then BBQ to perfection. the dip is usually serves over bbq sticks and rice and lots of it. __ #ilovefilopinofood #filifooduk #filipinorecipes #whattocook #filipinocuisine #foodstories #letscook #londonfoodies #eaterlondon #filipinofoodmovement #pinoyfood #londoneats #foodiesofig #filipinofood #timeoutlondon #foodblogger #foodphotography #food #foodstyling #sattidezamboanga #satti #bbq #summer #summervibes☀️.” Instagram. https://www.instagram.com/p/B0TCLIhHc3C/?igshid=MzRlODBiNWFlZA \n\nhttps://www.instagram.com/p/CI10zinH_nH/?igshid=MzRlODBiNWFlZA \n\nDy, P. (2023, April 22). Phil Dy on Instagram: “chicken satti de zamboanga. grilled skewered chicken and rice cakes in a sweet and spicy soup heavy on ginger, turmeric, and chili. makes you feel all warm inside.” Instagram. https://www.instagram.com/p/BnQWs_eD2m-/?igshid=MzRlODBiNWFlZA "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lokot-lokot"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pinas, E. (2023, May 17). Enjoy Pinas on Instagram: “You can’t go wrong with the crunchy Tausug snack Lokot-Lokot. also known as Zamboanga Rolls, zambo rolls or JAA by the locals, it’s a crunchy, golden brown delicacy made from pounded rice and sugar.⠀ ⠀ #EnjoyPinas #lokotlokot #snack #zamboangarolls #zamborolls #jaa #crunchy #goldenbrown #delicacy #tausugsnack #snack.” Instagram. https://www.instagram.com/p/B0u59oUnNoU/?igshid=MzRlODBiNWFlZA \n\nLogin • instagram. (n.d.-a). https://www.instagram.com/p/CI10zinH_nH/?igshid=MzRlODBiNWFlZA \n\nLogin • instagram. (n.d.-a). https://www.instagram.com/p/Ccw97W1PmhO/?igshid=MzRlODBiNWFlZA \n\nSahibad, A. (2023, May 17). Aileen Sahibad on Instagram: “‘Jaa’ morning☕ Lokot Lokot, tinagtag #delicacy #delicacies #pagkaingpinoy #zamboangaroll #zamboanga #bangbangsug #lokotlokot.” Instagram. https://www.instagram.com/p/BX6feP8Flgu/?igshid=MzRlODBiNWFlZA "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chikalang"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Google. (n.d.). Google image result for https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=2009549782510800. https://www.google.com/imgres?imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D2009549782510800&amp;tbnid=Pc7YCSSo6EooJM&amp;vet=1&amp;imgrefurl=https%3A%2F%2Fwww.facebook.com%2F432400870225707%2Fposts%2Fchikalang%2F2009549895844122%2F&amp;docid=KmRDJzomFA5GaM&amp;w=960&amp;h=720&amp;itg=1&amp;hl=en-GB&amp;source=sh%2Fx%2Fim "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Curacha"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kader, Z. (2023, May 17). Zainab Kader on Instagram: “Kuracha is a real treat. my first taste was in Zamboanga, the Philipines. best when u just steam them or cooked with sweet sour sauce.... @rubydiamond28 , @baijam_ . I miss these so much. so, I use crabs, Udang Galah at HaciendaHermosa. that will do till I get my kuracha.” Instagram. https://www.instagram.com/p/BydyFJ7J0Aw/?igshid=MzRlODBiNWFlZA \n\nLogin • instagram. (n.d.-a). https://www.instagram.com/p/B_rnE0jFJYf/?igshid=MzRlODBiNWFlZA \n\nLogin • instagram. (n.d.-a). https://www.instagram.com/p/wSsvNFr3zh/?igshid=MzRlODBiNWFlZA \n\nLogin • instagram. (n.d.-a). https://www.instagram.com/p/igOToSKEwi/?igshid=MzRlODBiNWFlZA "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOLY SMOKES: Korean Grill"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Holy smokes: Korean grill &amp; resto. City of Zamboanga, Zamboanga del S. (n.d.). https://www.lookph.com/p/holy-smokes-korean-grill-resto-86da2.html \n\nHoly smokes: Korean grill &amp; resto, Zamboanga City - Menu, prices &amp; restaurant reviews. Tripadvisor. (n.d.). https://www.tripadvisor.com/Restaurant_Review-g580109-d23897986-Reviews-Holy_Smokes_Korean_Grill_Resto-Zamboanga_City_Zamboanga_Sibugay_Province_Zamboan.html "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bay Tal Mal Restaurant"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bay Tal Mal Restaurant. Halal moro cuisine Filipino Restaurant in Zamboanga City. (n.d.). https://bay-tal-mal-restaurant.business.site/ "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alavar Seafood Restaurant	"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rizanoia. (2020, April 27). Alavar Seafood Restaurant, Zamboanga City. RIZANOIA. https://www.rizanoia.com/alavar-seafood-restaurant-zamboanga/ Pilipinas, W. (2014, April 9). Alavar Seafood Restaurant of zamboanga: Everyone went gaga over the curacha. Wazzup Pilipinas News and Events. https://www.wazzuppilipinas.com/2014/04/alavar-seafood-restaurant-of-zamboanga.html?m=1 Alavar Seafood Restaurant, Zamboanga City - updated 2023 restaurant reviews, Photos &amp; Phone Number. Tripadvisor. (n.d.-a). https://www.tripadvisor.co.uk/Restaurant_Review-g580109-d793725-Reviews-Alavar_Seafood_Restaurant-Zamboanga_City_Zamboanga_Sibugay_Province_Zamboanga_Peni.html "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kape Zambo Acoustic Bar and Restaurant"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kape Zambo acoustic bar and restaurant, Zamboanga City - restaurant reviews, phone number &amp; photos. Tripadvisor. (n.d.-c). https://www.tripadvisor.com.ph/Restaurant_Review-g580109-d3643739-Reviews-Kape_Zambo_Acoustic_Bar_and_Restaurant-Zamboanga_City_Zamboanga_Sibugay_Province_.html \n\nMatheusvasconcelosufjf. (n.d.). Lista-IPTV/IPTV 2021 at master · matheusvasconcelosufjf/lista-IPTV. GitHub. https://github.com/matheusvasconcelosufjf/LISTA-IPTV/blob/master/IPTV%202021 "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CALENAR BARTER TRADE"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Canelar Barter Trade Center (zamboanga city) - all you need to know before you go. Tripadvisor. (n.d.-b). https://www.tripadvisor.com.ph/Attraction_Review-g580109-d2403290-Reviews-Canelar_Barter_Trade_Center-Zamboanga_City_Zamboanga_Sibugay_Province_Zamboanga_P.html "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YAKAN WEAVING CENTER"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Yakan Weaving Center (zamboanga city) - all you need to know before you go. Tripadvisor. (n.d.-e). https://www.tripadvisor.com.ph/Attraction_Review-g580109-d1637127-Reviews-Yakan_Weaving_Center-Zamboanga_City_Zamboanga_Sibugay_Province_Zamboanga_Peninsul.html#/media-atf/1637127/438835639:p/?albumid=-160&amp;type=0&amp;category=-160 "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KKC Mall de Zamboanga"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Google. (n.d.). Google image result for https://caap.gov.ph/wp-content/uploads/2022/09/KCC-Mall-de-Zamboanga.jpg. https://www.google.com/imgres?imgurl=https%3A%2F%2Fcaap.gov.ph%2Fwp-content%2Fuploads%2F2022%2F09%2FKCC-Mall-de-Zamboanga.jpg&amp;tbnid=IYgw2dkwo4Nq4M&amp;vet=1&amp;imgrefurl=https%3A%2F%2Fcaap.gov.ph%2Fkcc-mall-de-zamboanga%2F&amp;docid=wuUKsewpIwAGfM&amp;w=1536&amp;h=1152&amp;hl=en-GB&amp;source=sh%2Fx%2Fim "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brews Almighty"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Log into Facebook. Facebook. (n.d.-a). https://m.facebook.com/brewsalmightycoffee \n\nLog into Facebook. Facebook. (n.d.-a). https://www.facebook.com/brewsalmightycoffee/photos/a.920987607929526/920985297929757/?type=3&amp;app=fbl"
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accessibility"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cebu Pacific added more flights for Zamboanga - Tawi-Tawi Route. My Mindanao | Mindanao Travels and Photography by Nanardx. (n.d.). https://www.mymindanao.com/2018/06/cebu-pacific-zambo-tawi-tawi-flights.html \n\nmbb8356. (2023b, May 19). Outer Wharf of zamboanga port. Flickr. https://www.flickr.com/photos/29421855@N07/6976036053/ \n\nZamboanga City Integrated Bus Terminal. Caught (up) in traffic. (2020, January 2). https://d0ctrine.com/2020/01/02/zamboanga-city-integrated-bus-terminal/ \n\nNguyen, T. (2023, January 4). Locations for rent a motorbike in Dong Hoi Quang Binh good price from 120k. Travel Blog Phuot3Mien. https://en.phuot3mien.com/rent-a-motorbike-in-dong-hoi-quang-binh.html \n\nLTO cracks down on taxi drivers refusing passengers. https://www.topgear.com.ph. (n.d.). https://www.topgear.com.ph/news/motoring-news/lto-crackdown-taxi-drivers-refusing-passengers-a4354-20230105 \n\nFile:tricycle-zamboanga.jpg. File:Tricycle-zamboanga.jpg - Philippines. (n.d.). https://zamboanga.com/z/index.php?title=File%3ATricycle-zamboanga.jpg"
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Activities"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Hermosa Festival "
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sunstar. (2021, September 21). “hermosa 2021 festival” events set in October. SUNSTAR. https://www.sunstar.com.ph/article/1907939/zamboanga/local-news/hermosa-2021-festival-events-set-in-october  \n\nHistory. La Hermosa Festival. (n.d.). https://sites.google.com/site/zambofiestahermosa/history  \n\nNomad, G., &amp;amp; Glen NomadGlen Nomad is a travel blogger and the founder of Escape Manila. (2022, September 10). Zamboanga Hermosa Festival 2022 schedule of events and activities. Escape Manila. https://www.escapemanila.com/2022/09/zamboanga-hermosa-festival-2022.html  \n\nWikimedia Foundation. (2023, April 13). Hermosa Festival. Wikipedia. https://en.wikipedia.org/wiki/Hermosa_Festival "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Regatta de Zamboanga "
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Regatta de zamboanga: The Brute, the Men &amp;amp; the Graceful Sails. Travel Trilogy. (2019, November 4). http://www.traveltrilogy.com/2019/11/regatta-de-zamboanga.html  \n\nSantos, A. K. (2015, October 2). Regatta de Zamboanga &amp;amp; La Hermosa Festival. Travel Up. https://www.traveling-up.com/zamboangas-la-hermosa-festival-2012/  \n\n200 boat operators take part in annual regatta de Zamboanga. Manila Bulletin. (n.d.). https://mb.com.ph/2022/10/10/200-boat-operators-take-part-in-annual-regatta-de-zamboanga/  "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Dia de Zamboanga "
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dia De Zamboanga. Official Website of the City Government of Zamboanga. (n.d.). https://zamboangacity.gov.ph/dia-de-zamboanga/  \n\nSunstar. (2021a, February 14). Virtual Dia de Zamboanga events set amid pandemic. SUNSTAR. https://www.sunstar.com.ph/article/1885910/zamboanga/local-news/virtual-dia-de-zamboanga-events-set-amid-pandemic  \n\nPia – Zamboanga on its 86th year as Chartered City. (n.d.). https://pia.gov.ph/features/2023/02/20/zamboanga-on-its-86th-year-as-chartered-city  "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flores de Mayo "
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Flores de Mayo Festival: A forming giant of Filipino culture. Top Destination Choice The Philippines.com. (n.d.). https://www.top-destination-choice-the-philippines.com/flores-de-mayo.html  "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zamboanga City Bird Festival "
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Padilla, S. (2023, January 19). Top 6 festivals in Zamboanga City, Philippines – updated 2023. Trip101. https://trip101.com/article/festivals-in-zamboanga  Zamboanga City, birding, and the 9th Philippine Bird Festival. The Haribon Foundation. (2016, September 1). https://haribon.org.ph/zamboanga-city-birding-and-the-9th-philippine-bird-festival/  Cityenvironmentanddevelopment. (2023, March 9). City Environment and Natural Resources. http://www.zamboangacity.gov.ph/cityenvironmentandnaturalresources/2023/03/09/zamboanga-bird-festival-2023/ "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Additional Activities"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#636363"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bird watching "
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Log into Facebook. Facebook. (n.d.). https://www.facebook.com/people/Zscmst-FishPond-BIRD-Sanctuary/100079479447829/  \n\nZscmst Bird Sanctuary – Zamboanga, Zamboanga del Sur, philippines – cybo. (n.d.-b). https://www.cybo.com/PH-biz/zscmst-bird-sanctuary  \n\nMulvey, K. (n.d.). The best birding supplies and Bird Watching Gear. Southern Living. https://www.southernliving.com/garden/bird-watching-equipment "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Explore merloquet falls "
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Santos, A. K. (2014, October 30). Zamboanga: Merloquet Falls. Travel Up. https://www.traveling-up.com/zamboanga-merloquet-falls/  "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Explore Santa Cruz island "
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rey. (2023, April 27). Day trip to Channel Islands National Park: Santa Cruz Island. Getaway Compass. https://www.getawaycompass.com/day-trip-channel-islands-santa-cruz/  "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hiking Pasonanca "
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The best zamboanga peninsula hiking trails (updated 2023). Tripadvisor. (n.d.-k). https://www.tripadvisor.com.ph/Attractions-g6090474-Activities-c61-t87-Zamboanga_Peninsula_Mindanao.html  "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Island Hopping Once Islas "
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Katherine CortesKatherine Cortes is a 30-something freelance writer/editor. She likes beaches. (2022a, October 2). Ultimate Guide to once Islas: Island hopping in Zamboanga. Tara Lets Anywhere. https://www.taraletsanywhere.com/once-islas-zamboanga/  "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sightseeing "
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The 5 best zamboanga city sights &amp;amp; landmarks. Tripadvisor. (n.d.-j). https://www.tripadvisor.com.ph/Attractions-g580109-Activities-c47-Zamboanga_City_Zamboanga_Sibugay_Province_Zamboanga_Peninsula_Mindanao.html  "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Visit Camp Limbaga "
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="(PDF) Camp Limbaga @ Pasonanca Park (Zamboanga City). Dokumen.tips. (n.d.-a). https://dokumen.tips/education/camp-limbaga-pasonanca-park-zamboanga-city.html  "
+                android:textColor="#000"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
