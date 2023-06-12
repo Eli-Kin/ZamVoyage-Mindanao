@@ -25,6 +25,7 @@ using ZamVoyage.Log;
 using AlertDialog = AndroidX.AppCompat.App.AlertDialog;
 using Color = Android.Graphics.Color;
 using Toolbar = AndroidX.AppCompat.Widget.Toolbar;
+using View = Android.Views.View;
 
 namespace ZamVoyage.Bottom_SideBar
 {
@@ -46,6 +47,8 @@ namespace ZamVoyage.Bottom_SideBar
             messageEditText = FindViewById<EditText>(Resource.Id.messageEditText);
             sendButton = FindViewById<Button>(Resource.Id.sendButton);
 
+            messageEditText.SetOnTouchListener(new TouchListener());
+
             var backArrowDrawable = Resources.GetDrawable(Resource.Drawable.ic_back);
             backArrowDrawable.SetTint(Color.ParseColor("#FFFFFF"));
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
@@ -55,6 +58,31 @@ namespace ZamVoyage.Bottom_SideBar
 
             sendButton.Click += SendButton_Click;
 
+        }
+
+        public class TouchListener : Java.Lang.Object, View.IOnTouchListener
+        {
+            public bool OnTouch(View view, MotionEvent motionEvent)
+            {
+                if (view.Id == Resource.Id.messageEditText)
+                {
+                    EditText editText = (EditText)view;
+                    int lines = editText.LineCount;
+                    int maxLines = 5; // Maximum number of lines before scrolling is enabled
+
+                    if (lines > maxLines)
+                    {
+                        view.Parent.RequestDisallowInterceptTouchEvent(true);
+                        switch (motionEvent.Action & MotionEventActions.Mask)
+                        {
+                            case MotionEventActions.Up:
+                                view.Parent.RequestDisallowInterceptTouchEvent(false);
+                                break;
+                        }
+                    }
+                }
+                return false;
+            }
         }
 
         private async void SendButton_Click(object sender, System.EventArgs e)

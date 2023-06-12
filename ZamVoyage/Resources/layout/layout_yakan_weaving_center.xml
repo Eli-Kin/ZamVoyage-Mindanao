@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#f9faed">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -98,7 +99,11 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
                 android:textColor="#000"
-                android:textSize="17sp"/>
+                android:textSize="17sp"
+                android:background="@drawable/yellow_pad_texture"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
 
             <com.codesgood.views.JustifiedTextView
                 android:id="@+id/prgph2"
@@ -109,7 +114,11 @@
                 android:paddingTop="15dp"
                 android:paddingRight="15dp"
                 android:textColor="#000"
-                android:textSize="17sp"/>
+                android:textSize="17sp"
+                android:background="@drawable/yellow_pad_texture"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
 
         </LinearLayout>
 

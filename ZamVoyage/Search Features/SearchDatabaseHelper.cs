@@ -26,7 +26,7 @@ namespace ZamVoyage.Search_Features
 
         public override void OnCreate(SQLiteDatabase db)
         {
-            string createTable = "CREATE TABLE items (_id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, image_path TEXT, description TEXT)";
+            string createTable = "CREATE TABLE items (_id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, image_path TEXT, description TEXT, categories TEXT)";
             db.ExecSQL(createTable);
         }
 
@@ -43,6 +43,7 @@ namespace ZamVoyage.Search_Features
             values.Put("title", item.Title);
             values.Put("description", item.Description);
             values.Put("image_path", item.ImagePath);
+            values.Put("categories", string.Join(",", item.Categories));  // Store categories as comma-separated string
             long id = db.Insert("items", null, values);
             db.Close();
             return id;
@@ -52,8 +53,8 @@ namespace ZamVoyage.Search_Features
         {
             List<Search_Item> items = new List<Search_Item>();
             SQLiteDatabase db = ReadableDatabase;
-            string[] columns = new string[] { "title", "image_path", "description" };
-            string selection = "title LIKE ?";
+            string[] columns = new string[] { "title", "image_path", "description", "categories" };
+            string selection = "categories LIKE ?";
             string[] selectionArgs = new string[] { "%" + query + "%" };
             string orderBy = "title ASC";
             ICursor cursor = db.Query("items", columns, selection, selectionArgs, null, null, orderBy);
@@ -63,6 +64,8 @@ namespace ZamVoyage.Search_Features
                 item.Title = cursor.GetString(cursor.GetColumnIndex("title"));
                 item.Description = cursor.GetString(cursor.GetColumnIndex("description"));
                 item.ImagePath = cursor.GetString(cursor.GetColumnIndex("image_path"));
+                string categoriesString = cursor.GetString(cursor.GetColumnIndex("categories"));
+                item.Categories = categoriesString.Split(',').ToList();
                 items.Add(item);
             }
             cursor.Close();

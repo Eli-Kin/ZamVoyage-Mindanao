@@ -173,6 +173,26 @@ namespace ZamVoyage.Planner
             selectDateButton.TextChanged += DataChangedEventHandler;
             chooseTimeButton.TextChanged += DataChangedEventHandler;
 
+            titleEditText.FocusChange +=
+            new EventHandler<View.FocusChangeEventArgs>((sender, e) =>
+            {
+                bool hasFocus = e.HasFocus;
+                if (hasFocus)
+                {
+                    if (titleEditText.Text == "Your Title")
+                    {
+                        titleEditText.Text = string.Empty;
+                    }
+                }
+                else if (titleEditText.Text == string.Empty)
+                {
+                    titleEditText.Text = "Your Title";
+                }
+
+            });
+
+            descriptionEditText.SetOnTouchListener(new TouchListener());
+
             // Create a SimpleDateFormat with the desired time format
             timeFormat = new SimpleDateFormat("hh:mm a", Java.Util.Locale.Default);
 
@@ -247,6 +267,31 @@ namespace ZamVoyage.Planner
 
             chooseTimeButton.Click += ChooseTimeButton_Click;
 
+        }
+
+        public class TouchListener : Java.Lang.Object, View.IOnTouchListener
+        {
+            public bool OnTouch(View view, MotionEvent motionEvent)
+            {
+                if (view.Id == Resource.Id.descriptionEditText)
+                {
+                    EditText editText = (EditText)view;
+                    int lines = editText.LineCount;
+                    int maxLines = 5; // Maximum number of lines before scrolling is enabled
+
+                    if (lines > maxLines)
+                    {
+                        view.Parent.RequestDisallowInterceptTouchEvent(true);
+                        switch (motionEvent.Action & MotionEventActions.Mask)
+                        {
+                            case MotionEventActions.Up:
+                                view.Parent.RequestDisallowInterceptTouchEvent(false);
+                                break;
+                        }
+                    }
+                }
+                return false;
+            }
         }
 
         private void ShowProgressDialog(string message)
@@ -376,7 +421,7 @@ namespace ZamVoyage.Planner
                 // Enter edit mode
                 titleEditText.Text = titleTextView.Text;
                 locationEditText.Text = locationTextView.Text;
-                locationToEditText.Text = locationTextView.Text;
+                locationToEditText.Text = locationToTextView.Text;
                 descriptionEditText.Text = descriptionTextView.Text;
                 selectDateButton.Text = dateTextView.Text;
                 chooseTimeButton.Text = timeTextView.Text;

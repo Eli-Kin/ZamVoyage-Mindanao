@@ -17,13 +17,17 @@ using Firebase.Database;
 using Java.Util;
 using Google.Android.Material.Snackbar;
 using Android.Net;
+using AndroidX.AppCompat.App;
+using AlertDialog = Android.App.AlertDialog;
+using ZamVoyage.Planner;
 
 namespace ZamVoyage.Log
 {
-    [Activity(Label = "Sign_up", Theme = "@style/AppTheme.NoActionBar")]
-    public class Sign_up : Activity
+    [Activity(Label = " ", Theme = "@style/AppTheme.NoActionBar")]
+    public class Sign_up : AppCompatActivity
     {
         private FirebaseAuth firebaseAuth;
+        ProgressDialog progressDialog;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -58,6 +62,13 @@ namespace ZamVoyage.Log
             TextView emailwarning = FindViewById<TextView>(Resource.Id.warningTextView);
             TextView signUpwarning = FindViewById<TextView>(Resource.Id.warning);
             Button btnSignup = FindViewById<Button>(Resource.Id.btn_signup);
+
+            var backArrowDrawable = Resources.GetDrawable(Resource.Drawable.ic_back);
+            backArrowDrawable.SetTint(Color.ParseColor("#0D8BFF"));
+            var toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(toolbar);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            SupportActionBar.SetHomeAsUpIndicator(backArrowDrawable);
 
             helloText.Typeface = MontserratSemiBold;
             registerText.Typeface = MontserratSemiBold;
@@ -98,8 +109,13 @@ namespace ZamVoyage.Log
                 string password = passwordEditText.Text;
                 string confirmPassword = confirmPasswordEditText.Text;
 
+                // Show the progress dialog
+                ShowProgressDialog("Loading...");
+
                 if (!IsOnline())
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     AlertDialog.Builder alert = new AlertDialog.Builder(this);
                     alert.SetTitle("Unable to connect to the internet.");
                     alert.SetMessage("Please check your network connection and try again.");
@@ -113,6 +129,8 @@ namespace ZamVoyage.Log
 
                 if (firstnameEditText.Text.Trim().Length == 0)
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     firstNamewarning.Visibility = ViewStates.Visible;
                     firstNamewarning.Text = "Please enter your First Name.";
                     return;
@@ -123,6 +141,8 @@ namespace ZamVoyage.Log
                 }
                 if (lastnameEditText.Text.Trim().Length == 0)
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     lastNamewarning.Visibility = ViewStates.Visible;
                     lastNamewarning.Text = "Please enter your Last Name.";
                     return;
@@ -133,6 +153,8 @@ namespace ZamVoyage.Log
                 }
                 if (usernameEditText.Text.Trim().Length == 0)
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     userNamewarning.Visibility = ViewStates.Visible;
                     userNamewarning.Text = "Please enter your Username.";
                     return;
@@ -143,6 +165,8 @@ namespace ZamVoyage.Log
                 }
                 if (emailEditText.Text.Trim().Length == 0)
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     emailwarning.Visibility = ViewStates.Visible;
                     emailwarning.Text = "Please enter your Email";
                     return;
@@ -153,6 +177,8 @@ namespace ZamVoyage.Log
                 }
                 if (passwordEditText.Text.Trim().Length == 0)
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     passwordwarning.Visibility = ViewStates.Visible;
                     passwordwarning.Text = "Please enter your Password.";
                     return;
@@ -164,6 +190,8 @@ namespace ZamVoyage.Log
 
                 if (confirmPasswordEditText.Text.Trim().Length == 0)
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     confirmPasswordwarning.Visibility = ViewStates.Visible;
                     confirmPasswordwarning.Text = "Please confirm your Password";
                     return;
@@ -175,6 +203,8 @@ namespace ZamVoyage.Log
 
                 if (!Android.Util.Patterns.EmailAddress.Matcher(email).Matches())
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     // Show an error message to the user
                     emailwarning.Visibility = ViewStates.Visible;
                     emailwarning.Text = "Please enter a valid email address.";
@@ -182,13 +212,16 @@ namespace ZamVoyage.Log
                 }
                 else if (password.Length < 8 || !Regex.IsMatch(password, @"[a-zA-Z]") || !Regex.IsMatch(password, @"\d"))
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     passwordwarning.Visibility = ViewStates.Visible;
                     passwordwarning.Text = "Password must be at least 8 characters long and contain letters and numbers.";
                     return;
                 }
                 else if (password != confirmPassword)
                 {
-
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     passwordwarning.Visibility = ViewStates.Visible;
                     passwordwarning.Text = "Password does not match!";
                     confirmPasswordwarning.Visibility = ViewStates.Visible;
@@ -198,6 +231,8 @@ namespace ZamVoyage.Log
                 }
                 else if (confirmPassword.Length < 8 || !Regex.IsMatch(confirmPassword, @"[a-zA-Z]") || !Regex.IsMatch(confirmPassword, @"\d"))
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     confirmPasswordwarning.Visibility = ViewStates.Visible;
                     confirmPasswordwarning.Text = "Password must be at least 8 characters long and contain letters and numbers.";
                     return;
@@ -210,6 +245,7 @@ namespace ZamVoyage.Log
                     passwordEditText.ClearFocus();
                     confirmPasswordEditText.ClearFocus();
                 }
+
                 try
                 {
                     // Create a new user with the email and password
@@ -238,19 +274,46 @@ namespace ZamVoyage.Log
                     passwordEditText.Text = "";
                     confirmPasswordEditText.Text = "";
 
-                    // Display a success message to the user
-                    signUpwarning.Visibility = ViewStates.Visible;
-                    signUpwarning.Text = "Account created successfully! \n A verification email has been sent to your email address. Please verify to continue.";
-                    signUpwarning.SetTextColor(Android.Graphics.Color.Green);
+                    // Sign out the user explicitly
+                    FirebaseAuth.Instance.SignOut();
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.SetTitle("Account created successfully!");
+                    builder.SetMessage("A verification email has been sent to your email address. Please verify to use the app.");
+                    builder.SetPositiveButton("Login Now", (dialog, which) =>
+                    {
+                        // Reset the preference to indicate that the MainActivity has not been launched before
+                        var preferences = GetSharedPreferences("MyAppPreferences", FileCreationMode.Private);
+                        var editor = preferences.Edit();
+                        editor.PutBoolean("MainActivityLaunchedBefore", false);
+                        editor.Commit();
+
+                        Intent getStarted = new Intent(this, typeof(Log_in));
+                        StartActivity(getStarted);
+                    });
+                    builder.SetNegativeButton("Ok", (dialog, which) =>
+                    {
+                        // User cancelled the action, do nothing
+                    });
+                    builder.Show();
+
+
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
+
                 }
                 catch (FirebaseAuthUserCollisionException)
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     // Display an error message to the user if the email is already in use
                     signUpwarning.Visibility = ViewStates.Visible;
                     signUpwarning.Text = "Email is already in use.";
                 }
                 catch (Exception ex)
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     // Display an error message to the user
                     signUpwarning.Visibility = ViewStates.Visible;
                     signUpwarning.Text = "Error: " + ex.Message;
@@ -274,11 +337,40 @@ namespace ZamVoyage.Log
 
         }
 
+        protected override void OnStop()
+        {
+            base.OnStop();
+
+            // Sign out the user when the app is being closed
+            FirebaseAuth.Instance.SignOut();
+        }
+
+
+        private void ShowProgressDialog(string message)
+        {
+            progressDialog = new ProgressDialog(this);
+            progressDialog.SetMessage(message);
+            progressDialog.SetCancelable(false);
+            progressDialog.Show();
+        }
+
         private bool IsOnline()
         {
             ConnectivityManager connectivityManager = (ConnectivityManager)GetSystemService(ConnectivityService);
             NetworkInfo networkInfo = connectivityManager.ActiveNetworkInfo;
             return networkInfo != null && networkInfo.IsConnectedOrConnecting;
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            if (item.ItemId == Android.Resource.Id.Home)
+            {
+                // Handle the back button press here
+                OnBackPressed();
+                return true;
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
 
         public override void OnBackPressed()

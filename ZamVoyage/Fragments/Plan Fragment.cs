@@ -21,6 +21,8 @@ using Java.Nio.FileNio;
 using Google.Type;
 using DateTime = System.DateTime;
 using Android.Gms.Extensions;
+using ZamVoyage.Log;
+using Android.Support.V4.Widget;
 
 namespace ZamVoyage
 {
@@ -38,6 +40,7 @@ namespace ZamVoyage
         private FirebaseAuth firebaseAuth;
         private FirebaseFirestore firestore;
         Spinner transportationSpinner, accomodationSpinner;
+        ScrollView planScrollView;
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -68,6 +71,27 @@ namespace ZamVoyage
             saveButton = view.FindViewById<Button>(Resource.Id.saveButton);
             transportationSpinner = view.FindViewById<Spinner>(Resource.Id.transportationSpinner);
             accomodationSpinner = view.FindViewById<Spinner>(Resource.Id.accomodationSpinner);
+            planScrollView = view.FindViewById<ScrollView>(Resource.Id.planScrollView);
+
+            titleEditText.FocusChange +=
+            new EventHandler<View.FocusChangeEventArgs>((sender, e) =>
+            {
+                bool hasFocus = e.HasFocus;
+                if (hasFocus)
+                { 
+                    if (titleEditText.Text == "Your Title")
+                    {
+                        titleEditText.Text = string.Empty;
+                    }
+                }
+                else if (titleEditText.Text == string.Empty)
+                {
+                    titleEditText.Text = "Your Title";
+                }
+
+            });
+
+            descriptionEditText.SetOnTouchListener(new TouchListener());
 
             List<string> travelModes = new List<string>()
             {
@@ -115,7 +139,6 @@ namespace ZamVoyage
                 "Tree House",
                 "Campground",
                 "Capsule Hotel",
-                "Boat",
                 "Yurt",
                 "Aparthotel",
                 "Pension",
@@ -148,6 +171,31 @@ namespace ZamVoyage
             chooseTimeButton.Click += ChooseTimeButton_Click;
 
             return view;
+        }
+
+        public class TouchListener : Java.Lang.Object, View.IOnTouchListener
+        {
+            public bool OnTouch(View view, MotionEvent motionEvent)
+            {
+                if (view.Id == Resource.Id.descriptionEditText)
+                {
+                    EditText editText = (EditText)view;
+                    int lines = editText.LineCount;
+                    int maxLines = 5; // Maximum number of lines before scrolling is enabled
+
+                    if (lines > maxLines)
+                    {
+                        view.Parent.RequestDisallowInterceptTouchEvent(true);
+                        switch (motionEvent.Action & MotionEventActions.Mask)
+                        {
+                            case MotionEventActions.Up:
+                                view.Parent.RequestDisallowInterceptTouchEvent(false);
+                                break;
+                        }
+                    }
+                }
+                return false;
+            }
         }
 
         private void Spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -304,6 +352,20 @@ namespace ZamVoyage
                 // If there is no current user, save the plan to the SQL database
                 SavePlanToSQLDatabase(plan);
             }
+            AlertDialog.Builder builder = new AlertDialog.Builder(Activity);
+            builder.SetTitle("Plan Saved Successfully!");
+            builder.SetMessage("Do you want to see your Plan List?");
+            builder.SetPositiveButton("See Plan", (dialog, which) =>
+            {
+                // Launch PlanListActivity
+                Intent getStarted = new Intent(Activity, typeof(PlanListActivity));
+                StartActivity(getStarted);
+            });
+            builder.SetNegativeButton("Done", (dialog, which) =>
+            {
+                // User cancelled the action, do nothing
+            });
+            builder.Show();
         }
 
         private async void SavePlanToFirestore(Plan plan)

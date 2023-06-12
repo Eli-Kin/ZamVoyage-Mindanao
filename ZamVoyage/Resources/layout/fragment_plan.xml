@@ -9,6 +9,7 @@
     android:background="@drawable/imageTest1">
 
     <ScrollView
+        android:id="@+id/planScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -18,7 +19,7 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-           <TextView
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Plan Your Trip"
@@ -121,9 +122,12 @@
                 android:padding="10dp"
                 android:layout_marginTop="5dp"
                 android:lines="5"
+                android:scrollbars="vertical"
+                android:inputType="textMultiLine"
+                android:scrollbarStyle="insideOverlay"
                 android:background="@drawable/edittext_border"
                 android:hint="Description"
-                android:gravity="top" />
+                android:gravity="top"/>
 
             <TextView
                 android:layout_width="match_parent"

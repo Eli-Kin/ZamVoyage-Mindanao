@@ -54,11 +54,12 @@ namespace ZamVoyage.Search_Features
                 itemViewHolder.imageView.SetImageResource(resourceId);
                 itemViewHolder.titleTextView.Text = item.Title;
                 itemViewHolder.descriptionTextView.Text = item.Description;
+                itemViewHolder.categoryTextView.Text = string.Join(", ", item.Categories);
             }
             else if (holder is NoSearchViewHolder noSearchViewHolder)
             {
                 TextView noSearchTextView = noSearchViewHolder.ItemView.FindViewById<TextView>(Resource.Id.noSearchTextView);
-                noSearchTextView.Text = "Search Here";
+                noSearchTextView.Text = "No Result";
             }
         }
 
@@ -86,12 +87,14 @@ namespace ZamVoyage.Search_Features
             public ImageView imageView;
             public TextView titleTextView;
             public TextView descriptionTextView;
+            public TextView categoryTextView;
 
             public ItemViewHolder(View itemView) : base(itemView)
             {
                 imageView = itemView.FindViewById<ImageView>(Resource.Id.image_view);
                 titleTextView = itemView.FindViewById<TextView>(Resource.Id.title_text_view);
                 descriptionTextView = itemView.FindViewById<TextView>(Resource.Id.descript_text_view);
+                categoryTextView = itemView.FindViewById<TextView>(Resource.Id.category_text_view);
                 itemView.SetOnClickListener(this);
             }
 

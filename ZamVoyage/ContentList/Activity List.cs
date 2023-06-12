@@ -42,13 +42,13 @@ namespace ZamVoyage.ContentList
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeAsUpIndicator(backArrowDrawable);
 
-            Button additionalActivities = FindViewById<Button>(Resource.Id.additionalActivities);
+            //Button additionalActivities = FindViewById<Button>(Resource.Id.additionalActivities);
 
-            additionalActivities.Click += delegate
-             {
-                 Intent intent = new Intent(this, typeof(Additional_Activities));
-                 StartActivity(intent);
-             };
+            //additionalActivities.Click += delegate
+            // {
+            //     Intent intent = new Intent(this, typeof(Additional_Activities));
+            //     StartActivity(intent);
+            // };
 
             recyclerView = FindViewById<RecyclerView>(Resource.Id.recycler_view);
             recyclerView.SetLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.Vertical, false));

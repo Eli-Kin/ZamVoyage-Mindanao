@@ -23,6 +23,7 @@ namespace ZamVoyage.Log
         private Timer timer;
         private int countdown = 60;
         private Button ButtonVerify;
+        ProgressDialog progressDialog;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -59,9 +60,20 @@ namespace ZamVoyage.Log
             throw new NotImplementedException();
         }
 
+        private void ShowProgressDialog(string message)
+        {
+            progressDialog = new ProgressDialog(this);
+            progressDialog.SetMessage(message);
+            progressDialog.SetCancelable(false);
+            progressDialog.Show();
+        }
+
         private async void ButtonVerify_Click(object sender, System.EventArgs e)
         {
             var currentUser = auth.CurrentUser;
+            // Show the progress dialog
+            ShowProgressDialog("Loading...");
+
             try
             {
                 if (currentUser != null && !currentUser.IsEmailVerified)

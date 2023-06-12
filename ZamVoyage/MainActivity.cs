@@ -7,6 +7,7 @@ using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
+using Android.Views.InputMethods;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using AndroidX.AppCompat.Widget;
@@ -22,8 +23,10 @@ using Google.Android.Material.Navigation;
 using Google.Android.Material.Snackbar;
 using Refractored.Controls;
 using ZamVoyage.Bottom_SideBar;
+using ZamVoyage.Content.Activities;
 using ZamVoyage.Content.History;
 using ZamVoyage.ContentList;
+using ZamVoyage.Favorites;
 using ZamVoyage.Fragments;
 using ZamVoyage.Log;
 using ZamVoyage.Planner;
@@ -43,10 +46,10 @@ namespace ZamVoyage
         private ActionBarDrawerToggle toggle;
         private FirebaseFirestore db;
         private DrawerLayout drawer;
-        private const int PROFILE_ACTIVITY_REQUEST = 1;
         TextView Name, Email, Profile;
         Toolbar toolbar;
         CircleImageView profilePic;
+        ImageButton favoritesButton, plansButton;
         string firstName, lastName, email, profPic;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -54,27 +57,47 @@ namespace ZamVoyage
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
+            //Firebase Initialization
             FirebaseApp.InitializeApp(this);
             firebaseAuth = FirebaseAuth.Instance;
             firebaseAuth = FirebaseAuth.GetInstance(FirebaseApp.Instance);
             FirebaseUser currentUser = firebaseAuth.CurrentUser;
 
+            Window.SetSoftInputMode(Android.Views.SoftInput.AdjustNothing);
+
+            //Toolbar Support
             toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
+            favoritesButton = FindViewById<ImageButton>(Resource.Id.favoritesButton);
+            plansButton = FindViewById<ImageButton>(Resource.Id.plansButton);
+
+            favoritesButton.Click += (sender, e) =>
+            {
+                Intent intent = new Intent(this, typeof(Favorites_Activity));
+                StartActivity(intent);
+            };
+
+            plansButton.Click += (sender, e) =>
+            {
+                Intent intent = new Intent(this, typeof(PlanListActivity));
+                StartActivity(intent);
+            };
+
+            //Navigation Drawer
             drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
             drawer.AddDrawerListener(toggle);
             drawer.AddDrawerListener(this);
             toggle.SyncState();
-
             toolbar.SetNavigationIcon(Resource.Drawable.ic_drawer_menu);
-
-            BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
-            navigation.SetOnNavigationItemSelectedListener(this);
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
+
+            //Bottom Navigation
+            BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
+            navigation.SetOnNavigationItemSelectedListener(this);
 
             var logoutMenuItem = navigationView.Menu.FindItem(Resource.Id.nav_logout);
 
@@ -84,6 +107,7 @@ namespace ZamVoyage
                 logoutMenuItem.SetTitle("Exit");
             }
 
+            //Navigation Header
             View headerView = navigationView.GetHeaderView(0);
 
             Name = headerView.FindViewById<TextView>(Resource.Id.nameShow);
@@ -91,27 +115,31 @@ namespace ZamVoyage
             profilePic = (CircleImageView)headerView.FindViewById(Resource.Id.profilePic);
             Profile = headerView.FindViewById<TextView>(Resource.Id.seeProfile);
 
+            //To Profile
             Profile.Click += (sender, e) =>
             {
                 Intent intent = new Intent(this, typeof(ProfileActivity));
                 StartActivity(intent);
             };
 
+            //Allow to function in Offline Mode
             FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
             .SetPersistenceEnabled(true)
             .Build();
-
             db = FirebaseFirestore.GetInstance(FirebaseApp.Instance);
             db.FirestoreSettings = settings;
 
+            //Check if there is a current user
             FirebaseUser user = FirebaseAuth.Instance.CurrentUser;
             if (user != null)
             {
+                //If there is a user, get the data in the firebase firestore
                 db.Collection("users").Document(firebaseAuth.CurrentUser.Uid).Get().AddOnSuccessListener(this);
                 Email.Visibility = ViewStates.Visible;
             }
             else
             {
+                //If no user hide the email and set the default text
                 Email.Visibility = ViewStates.Gone;
                 Name.Text = "Hello Voyager!";
             }
@@ -129,11 +157,21 @@ namespace ZamVoyage
             // Commit the transaction
             transaction.Commit();
 
+            //Hide the UI
             HideSystemUI();
         }
 
+        //Back Pressed Function
         public override void OnBackPressed()
         {
+            // Check if the keyboard is open
+            InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
+            if (imm.IsAcceptingText)
+            {
+                // Hide the system UI
+                HideSystemUI();
+            }
+            //If the drawer is open, close the drawer if BackPressed
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             if (drawer.IsDrawerOpen(GravityCompat.Start))
             {
@@ -141,10 +179,12 @@ namespace ZamVoyage
             }
             else
             {
+                //Normal Backpressed
                 base.OnBackPressed();
             }
         }
 
+        //Get the data from another acitivity
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
@@ -161,6 +201,7 @@ namespace ZamVoyage
             }
         }
 
+        //Update the Navigation drawer from the profile updates
         private void UpdateNavigationDrawer(string firstName, string lastName)
         {
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
@@ -171,7 +212,7 @@ namespace ZamVoyage
             System.Diagnostics.Debug.WriteLine("fullName: " + nameTextView.Text);
         }
 
-
+        //If the drawer is opened refresh the data so that it can be updated once the drawer is open
         public void OnDrawerOpened(View drawerView)
         {
             FirebaseUser user = FirebaseAuth.Instance.CurrentUser;
@@ -184,34 +225,40 @@ namespace ZamVoyage
             }
         }
 
+        //Default Function
         public void OnDrawerClosed(View drawerView)
         {
             ((DrawerLayout.IDrawerListener)toggle).OnDrawerClosed(drawerView);
         }
 
+        //Default Function
         public void OnDrawerSlide(View drawerView, float slideOffset)
         {
             ((DrawerLayout.IDrawerListener)toggle).OnDrawerSlide(drawerView, slideOffset);
         }
 
+        //Default Function
         public void OnDrawerStateChanged(int newState)
         {
             ((DrawerLayout.IDrawerListener)toggle).OnDrawerStateChanged(newState);
         }
 
-
+        //Navigation Menu
         public bool OnNavigationItemSelected(IMenuItem item)
         {
+
             AndroidX.Fragment.App.FragmentTransaction transaction = SupportFragmentManager.BeginTransaction();
+            //Menu ID
             int id = item.ItemId;
 
-            if (id == Resource.Id.nav_home)
-            {
-                Intent homeIntent = new Intent(this, typeof(MainActivity));
-                StartActivity(homeIntent);
-                Finish();
-            }
-            else if (id == Resource.Id.nav_history)
+            //Navigation Drawer Menu
+            //if (id == Resource.Id.nav_home)
+            //{
+            //    Intent homeIntent = new Intent(this, typeof(MainActivity));
+            //    StartActivity(homeIntent);
+            //    Finish();
+            //}
+            if (id == Resource.Id.nav_history)
             {
                 Intent intent = new Intent(this, typeof(History));
                 StartActivity(intent);
@@ -223,7 +270,7 @@ namespace ZamVoyage
             }
             else if (id == Resource.Id.nav_activities)
             {
-                Intent intent = new Intent(this, typeof(Activity_List));
+                Intent intent = new Intent(this, typeof(Additional_Activities));
                 StartActivity(intent);
             }
             else if (id == Resource.Id.nav_amenities)
@@ -243,7 +290,13 @@ namespace ZamVoyage
             }
             else if (id == Resource.Id.nav_about_us)
             {
-
+                Intent intent = new Intent(this, typeof(AboutUs_Activity));
+                StartActivity(intent);
+            }
+            else if (id == Resource.Id.nav_references)
+            {
+                Intent intent = new Intent(this, typeof(References_Activity));
+                StartActivity(intent);
             }
             else if (id == Resource.Id.nav_contact_us)
             {
@@ -257,6 +310,7 @@ namespace ZamVoyage
             }
             else if (id == Resource.Id.nav_logout)
             {
+                //Add confirmation to the logout or exit menu
                 if (firebaseAuth.CurrentUser != null)
                 {
                     // User is logged in, show logout confirmation dialog
@@ -311,6 +365,8 @@ namespace ZamVoyage
                     builder.Show();
                 }
             }
+
+            //Bottom Navigation Menu
             else if (id == Resource.Id.navigation_home)
             {
                 SupportActionBar.Show();
@@ -357,9 +413,10 @@ namespace ZamVoyage
             return true;
         }
 
+        //Hide the UI method
         private void HideSystemUI()
         {
-            // Hide the navigation and status bars
+            // Hide the navigation
             View decorView = Window.DecorView;
             var uiOptions = (int)decorView.SystemUiVisibility;
             uiOptions |= (int)SystemUiFlags.HideNavigation;
@@ -378,6 +435,7 @@ namespace ZamVoyage
             }
         }
 
+        //Get the data in the firebase firestore using OnSuccessListener
         public void OnSuccess(Java.Lang.Object result)
         {
             FirebaseUser currentUser = firebaseAuth.CurrentUser;
@@ -387,6 +445,7 @@ namespace ZamVoyage
             lastName = snapshot.Get("lastName").ToString();
             email = snapshot.Get("email") != null ? snapshot.Get("email").ToString() : "";
 
+            //Handle the profile Picture
             if (snapshot.Contains("profilePicture"))
             {
                 var profilePictureObj = snapshot.Get("profilePicture");

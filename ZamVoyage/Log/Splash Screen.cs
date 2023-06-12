@@ -32,7 +32,6 @@ namespace ZamVoyage.Log
 
             splashText.Typeface = Montserrat;
             splashTitle.Typeface = MontserratExtraBold;
-
         }
 
         private void HideSystemUI()
@@ -67,8 +66,7 @@ namespace ZamVoyage.Log
         {
             await Task.Delay(3000); // Simulate a bit of startup work.
 
-            Intent intent = new Intent(this, typeof(Get_Started));
-            StartActivity(intent);
+            Intent intent;
 
             // Retrieve the shared preferences variable.
             var preferences = GetSharedPreferences("MyAppPreferences", FileCreationMode.Private);
@@ -80,16 +78,23 @@ namespace ZamVoyage.Log
             var firebaseAuth = FirebaseAuth.GetInstance(Firebase.FirebaseApp.Instance);
             var user = firebaseAuth.CurrentUser;
 
-            if (mainActivityLaunchedBefore || user != null)
+            if (mainActivityLaunchedBefore)
             {
-                // If the MainActivity has been launched before and the user is logged in, start the MainActivity.
-                StartActivity(new Intent(Application.Context, typeof(MainActivity)));
+                // If the MainActivity has been launched before, start the MainActivity.
+                intent = new Intent(this, typeof(MainActivity));
+            }
+            else if (user != null && user.IsEmailVerified)
+            {
+                // If the user is logged in and the email is verified, start the MainActivity.
+                intent = new Intent(this, typeof(MainActivity));
             }
             else
             {
-
-                StartActivity(new Intent(Application.Context, typeof(Get_Started)));
+                // If the user is not logged in, the email is not verified, and the MainActivity hasn't been launched before, start the Get_Started activity.
+                intent = new Intent(this, typeof(Get_Started));
             }
+
+            StartActivity(intent);
 
             // Finish the splash screen activity to prevent the user from returning to it.
             Finish();

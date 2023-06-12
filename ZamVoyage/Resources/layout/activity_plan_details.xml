@@ -54,14 +54,14 @@
                     android:layout_marginLeft="10dp"/>
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Title"
                     android:layout_marginTop="5dp"
                     android:textSize="25sp"
                     android:textColor="#68038c"
                     android:textStyle="bold"
-                    android:paddingRight="10dp"/>
+                    />
 
                 <TextView
                     android:id="@+id/titleTextView"
@@ -71,7 +71,6 @@
                     android:layout_marginTop="5dp"
                     android:textSize="22sp"
                     android:textColor="#000"
-                    android:textStyle="bold"
                     android:paddingRight="10dp"/>
 
                 <EditText
@@ -84,17 +83,25 @@
                     android:layout_marginTop="5dp"
                     android:hint="Title*"
                     android:text="Your Title"
-                    android:visibility="gone" />
+                    android:visibility="gone" 
+                    android:layout_marginBottom="10dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#636363"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"/>
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="From"
                     android:layout_marginTop="5dp"
                     android:textSize="25sp"
                     android:textColor="#68038c"
                     android:textStyle="bold"
-                    android:paddingRight="10dp"/>
+                    />
 
                 <TextView
                     android:id="@+id/locationTextView"
@@ -104,7 +111,6 @@
                     android:layout_marginTop="5dp"
                     android:textSize="22sp"
                     android:textColor="#000"
-                    android:textStyle="bold"
                     android:paddingRight="10dp"/>
 
                 <EditText
@@ -117,19 +123,26 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="0dp"
                     android:layout_marginRight="0dp"
-                    android:layout_marginBottom="0dp"
                     android:hint="From"
-                    android:visibility="gone"/>
+                    android:visibility="gone"
+                    android:layout_marginBottom="10dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#636363"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"/>
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="To"
                     android:layout_marginTop="5dp"
                     android:textSize="25sp"
                     android:textColor="#68038c"
                     android:textStyle="bold"
-                    android:paddingRight="10dp"/>
+                    />
 
                 <TextView
                     android:id="@+id/locationToTextView"
@@ -139,7 +152,6 @@
                     android:layout_marginTop="5dp"
                     android:textSize="22sp"
                     android:textColor="#000"
-                    android:textStyle="bold"
                     android:paddingRight="10dp"/>
 
                 <EditText
@@ -152,19 +164,26 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="0dp"
                     android:layout_marginRight="0dp"
-                    android:layout_marginBottom="0dp"
                     android:hint="To"
-                    android:visibility="gone"/>
+                    android:visibility="gone"
+                    android:layout_marginBottom="10dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#636363"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"/>
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Description"
                     android:layout_marginTop="5dp"
                     android:textSize="25sp"
                     android:textColor="#68038c"
                     android:textStyle="bold"
-                    android:paddingRight="10dp"/>
+                    />
 
                 <TextView
                     android:id="@+id/descriptionTextView"
@@ -174,7 +193,6 @@
                     android:layout_marginTop="5dp"
                     android:textSize="22sp"
                     android:textColor="#000"
-                    android:textStyle="bold"
                     android:paddingRight="10dp"/>
 
                 <EditText
@@ -184,21 +202,33 @@
                     android:padding="10dp"
                     android:layout_marginTop="5dp"
                     android:lines="5"
+                    android:scrollbars="vertical"
+                    android:inputType="textMultiLine"
+                    android:scrollbarStyle="insideOverlay"
                     android:background="@drawable/edittext_border"
                     android:hint="Description"
                     android:gravity="top"
-                    android:visibility="gone"/>
+                    android:visibility="gone"
+                    android:layout_marginBottom="10dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#636363"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Departing Date and Time"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:textSize="25sp"
                     android:textColor="#68038c"
                     android:textStyle="bold"
-                    android:paddingRight="10dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    />
 
                 <View
                     android:layout_width="match_parent"
@@ -215,7 +245,6 @@
                     android:layout_marginTop="5dp"
                     android:textSize="22sp"
                     android:textColor="#000"
-                    android:textStyle="bold"
                     android:paddingRight="10dp"
                     android:gravity="center"/>
 
@@ -241,7 +270,6 @@
                     android:layout_marginTop="5dp"
                     android:textSize="22sp"
                     android:textColor="#000"
-                    android:textStyle="bold"
                     android:paddingRight="10dp"
                     android:gravity="center"/>
 
@@ -257,7 +285,8 @@
                     android:textAllCaps="false"
                     android:layout_gravity="center"
                     android:text="Choose your Time"
-                    android:visibility="gone"/>
+                    android:visibility="gone"
+                    android:layout_marginBottom="10dp"/>
 
                 <View
                     android:layout_width="match_parent"
@@ -274,8 +303,8 @@
                     android:textSize="25sp"
                     android:textColor="#68038c"
                     android:textStyle="bold"
-                    android:paddingRight="10dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    />
 
                 <TextView
                     android:id="@+id/transportationTextView"
@@ -285,7 +314,6 @@
                     android:layout_marginTop="5dp"
                     android:textSize="22sp"
                     android:textColor="#000"
-                    android:textStyle="bold"
                     android:paddingRight="10dp"
                     android:gravity="center"/>
 
@@ -307,6 +335,13 @@
 
                 </RelativeLayout>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#636363"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -315,8 +350,8 @@
                     android:textSize="25sp"
                     android:textColor="#68038c"
                     android:textStyle="bold"
-                    android:paddingRight="10dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    />
 
                 <TextView
                     android:id="@+id/accomodationTextView"
@@ -326,7 +361,6 @@
                     android:layout_marginTop="5dp"
                     android:textSize="22sp"
                     android:textColor="#000"
-                    android:textStyle="bold"
                     android:paddingRight="10dp"
                     android:gravity="center"/>
 
@@ -338,7 +372,6 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
                     android:visibility="gone">
 
                     <Spinner

@@ -6,6 +6,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using AndroidX.AppCompat.App;
 using Firebase;
 using Firebase.Auth;
 using System;
@@ -13,17 +14,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Timers;
+using AlertDialog = Android.App.AlertDialog;
 
 namespace ZamVoyage.Log
 {
-    [Activity(Label = "Forgot_Password", Theme = "@style/AppTheme.NoActionBar")]
-    public class Forgot_Password : Activity
+    [Activity(Label = " ", Theme = "@style/AppTheme.NoActionBar")]
+    public class Forgot_Password : AppCompatActivity
     {
         private FirebaseAuth auth;
         private TextView resendText;
         private Button resendButton;
         private Timer timer;
         private int countdown = 60;
+        ProgressDialog progressDialog;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -43,6 +46,13 @@ namespace ZamVoyage.Log
             EditText emailEditText = FindViewById<EditText>(Resource.Id.emailEditText);
             resendText = FindViewById<TextView>(Resource.Id.resendText);
             resendButton = FindViewById<Button>(Resource.Id.forgotPasswordButton);
+
+            var backArrowDrawable = Resources.GetDrawable(Resource.Drawable.ic_back);
+            backArrowDrawable.SetTint(Color.ParseColor("#0D8BFF"));
+            var toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(toolbar);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            SupportActionBar.SetHomeAsUpIndicator(backArrowDrawable);
 
             helloText.Typeface = MontserratSemiBold;
             emailText.Typeface = MontserratSemiBold;
@@ -80,32 +90,49 @@ namespace ZamVoyage.Log
             resendButton.Click += OnForgotPasswordButtonClick;
         }
 
+        private void ShowProgressDialog(string message)
+        {
+            progressDialog = new ProgressDialog(this);
+            progressDialog.SetMessage(message);
+            progressDialog.SetCancelable(false);
+            progressDialog.Show();
+        }
+
         private async void OnForgotPasswordButtonClick(object sender, EventArgs e)
         {
             EditText emailEditText = FindViewById<EditText>(Resource.Id.emailEditText);
             string email = emailEditText.Text.Replace(" ", "");
+            // Show the progress dialog
+            ShowProgressDialog("Loading...");
             if (string.IsNullOrEmpty(email))
             {
+                // Dismiss the progress dialog
+                progressDialog.Dismiss();
                 resendText.Text = "Please enter your email.";
                 return;
             }
             else
             {
                 resendText.Text = " ";
-                return;
             }
             try
             {
                 await auth.SendPasswordResetEmailAsync(email);
                 emailEditText.ClearFocus();
                 Toast.MakeText(this, "Password reset email sent", ToastLength.Short).Show();
+                // Dismiss the progress dialog
+                progressDialog.Dismiss();
             }
             catch (FirebaseAuthInvalidUserException)
             {
+                // Dismiss the progress dialog
+                progressDialog.Dismiss();
                 Toast.MakeText(this, "User with this email does not exist", ToastLength.Short).Show();
             }
             catch (Exception ex)
             {
+                // Dismiss the progress dialog
+                progressDialog.Dismiss();
                 Toast.MakeText(this, "Error sending password reset email: " + ex.Message, ToastLength.Short).Show();
             }
         }
@@ -114,6 +141,18 @@ namespace ZamVoyage.Log
         {
             outState.PutInt("countdown", countdown);
             base.OnSaveInstanceState(outState);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            if (item.ItemId == Android.Resource.Id.Home)
+            {
+                // Handle the back button press here
+                OnBackPressed();
+                return true;
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
 
         protected override void OnDestroy()

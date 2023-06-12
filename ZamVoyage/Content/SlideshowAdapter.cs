@@ -24,13 +24,14 @@ namespace ZamVoyage.Content
             this.imageList = imageList;
         }
 
-        public override int Count => imageList.Count;
+        public override int Count => imageList.Count + 2; // Add 2 extra items for cyclic scrolling
 
         public override Java.Lang.Object InstantiateItem(ViewGroup container, int position)
         {
+            int imagePosition = GetImagePosition(position);
             ImageView imageView = new ImageView(context);
             imageView.SetScaleType(ImageView.ScaleType.CenterCrop);
-            imageView.SetImageResource(imageList[position]);
+            imageView.SetImageResource(imageList[imagePosition]);
             container.AddView(imageView);
             return imageView;
         }
@@ -43,6 +44,23 @@ namespace ZamVoyage.Content
         public override bool IsViewFromObject(View view, Java.Lang.Object objectValue)
         {
             return view == objectValue;
+        }
+
+        public override int GetItemPosition(Java.Lang.Object objectValue)
+        {
+            return PositionNone; // This disables notifyDataSetChanged() to recreate all views
+        }
+
+        private int GetImagePosition(int position)
+        {
+            int imageCount = imageList.Count;
+
+            if (position == 0) // First item, return last image position
+                return imageCount - 1;
+            else if (position == Count - 1) // Last item, return first image position
+                return 0;
+            else // Regular items
+                return position - 1;
         }
     }
 

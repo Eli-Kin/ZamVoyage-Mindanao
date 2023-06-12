@@ -20,6 +20,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using ZamVoyage.Log;
+using ZamVoyage.Planner;
 using AlertDialog = AndroidX.AppCompat.App.AlertDialog;
 using Color = Android.Graphics.Color;
 using Toolbar = AndroidX.AppCompat.Widget.Toolbar;
@@ -122,25 +123,35 @@ namespace ZamVoyage.Bottom_SideBar
             // Set the positive button text and action
             builder.SetPositiveButton("Delete", (s, args) =>
             {
+
+                FirebaseFirestore db = FirebaseFirestore.GetInstance(FirebaseApp.Instance);
+                DocumentReference docRef = db.Collection("users").Document(firebaseAuth.CurrentUser.Uid);
+                docRef.Delete();
+
                 // Delete the user account
                 FirebaseUser user = firebaseAuth.CurrentUser;
                 user.Delete().AddOnCompleteListener(this, new DeleteAccountCompleteListener());
 
-                // Sign the user out
-                FirebaseAuth.Instance.SignOut();
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.SetTitle("Account deleted successfully!");
+                builder.SetMessage("Thank you for using our app.");
+                builder.SetPositiveButton("Done", (dialog, which) =>
+                {
+                    // Sign the user out
+                    FirebaseAuth.Instance.SignOut();
 
-                // Reset the preference to indicate that the MainActivity has not been launched before
-                var preferences = GetSharedPreferences("MyAppPreferences", FileCreationMode.Private);
-                var editor = preferences.Edit();
-                editor.PutBoolean("MainActivityLaunchedBefore", false);
-                editor.Commit();
+                    // Reset the preference to indicate that the MainActivity has not been launched before
+                    var preferences = GetSharedPreferences("MyAppPreferences", FileCreationMode.Private);
+                    var editor = preferences.Edit();
+                    editor.PutBoolean("MainActivityLaunchedBefore", false);
+                    editor.Commit();
 
-                // Redirect to the login screen
-                Intent intent = new Intent(this, typeof(Get_Started));
-                intent.SetFlags(ActivityFlags.ClearTask | ActivityFlags.NewTask);
-                StartActivity(intent);
-                Finish();
-
+                    Intent getStarted = new Intent(this, typeof(Get_Started));
+                    getStarted.SetFlags(ActivityFlags.ClearTask | ActivityFlags.NewTask);
+                    StartActivity(getStarted);
+                    Finish();
+                });
+                builder.Show();
             });
 
             // Set the negative button text and action

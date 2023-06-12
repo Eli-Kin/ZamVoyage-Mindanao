@@ -109,7 +109,7 @@ namespace ZamVoyage.Favorites
                 var intent = new Intent(v.Context, typeof(Great_Santa_Cruz_Island));
                 v.Context.StartActivity(intent);
             }
-            else if (title == "Once Island")
+            else if (title == "Once Islas")
             {
                 var intent = new Intent(v.Context, typeof(Once_Islas));
                 v.Context.StartActivity(intent);
@@ -149,7 +149,7 @@ namespace ZamVoyage.Favorites
                 var intent = new Intent(v.Context, typeof(Paseo_del_Mar));
                 v.Context.StartActivity(intent);
             }
-            else if (title == "The Hermosa Festival")
+            else if (title == "Hermosa Festival")
             {
                 var intent = new Intent(v.Context, typeof(Hermosa_Festival));
                 v.Context.StartActivity(intent);

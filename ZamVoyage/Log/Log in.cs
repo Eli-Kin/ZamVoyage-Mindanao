@@ -1,25 +1,36 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Gms.Extensions;
+using Android.Gms.Tasks;
 using Android.Graphics;
+using Android.Net;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
+using Android.Views.InputMethods;
 using Android.Widget;
+using AndroidX.AppCompat.App;
+using AndroidX.RecyclerView.Widget;
+using Firebase;
+using Firebase.Auth;
+using Firebase.Firestore;
+using Org.Apache.Commons.Logging;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Joins;
 using System.Text;
-using Firebase.Auth;
-using Firebase;
-using static Android.Service.Voice.VoiceInteractionSession;
-using Android.Net;
+using static Android.Icu.Text.Transliterator;
+using AlertDialog = AndroidX.AppCompat.App.AlertDialog;
 
 namespace ZamVoyage.Log
 {
-    [Activity(Label = "Log_in", Theme = "@style/AppTheme.NoActionBar")]
-    public class Log_in : Activity
+    [Activity(Label = " ", Theme = "@style/AppTheme.NoActionBar")]
+    public class Log_in : AppCompatActivity
     {
         private FirebaseAuth firebaseAuth;
+        ProgressDialog progressDialog;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -49,6 +60,16 @@ namespace ZamVoyage.Log
             TextView forgotText = FindViewById<TextView>(Resource.Id.forgotText);
             Button btnSignin = FindViewById<Button>(Resource.Id.btn_signin);
 
+            var backArrowDrawable = Resources.GetDrawable(Resource.Drawable.ic_back);
+            backArrowDrawable.SetTint(Color.ParseColor("#0D8BFF"));
+            var toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(toolbar);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            SupportActionBar.SetHomeAsUpIndicator(backArrowDrawable);
+
+            // Check if the keyboard is open
+            InputMethodManager inputMethodManager = (InputMethodManager)GetSystemService(InputMethodService);
+
             helloText.Typeface = MontserratSemiBold;
             welcomeText.Typeface = MontserratSemiBold;
             detailsText.Typeface = MontserratSemiBold;
@@ -66,8 +87,16 @@ namespace ZamVoyage.Log
                 string email = emailText.Text.Replace(" ", "");
                 string password = passwordText.Text;
 
+                // Hide the keyboard
+                inputMethodManager.HideSoftInputFromWindow(CurrentFocus.WindowToken, HideSoftInputFlags.None);
+
+                // Show the progress dialog
+                ShowProgressDialog("Loading...");
+
                 if (!IsOnline())
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     AlertDialog.Builder alert = new AlertDialog.Builder(this);
                     alert.SetTitle("Unable to connect to the internet.");
                     alert.SetMessage("Please check your network connection and try again.");
@@ -81,6 +110,8 @@ namespace ZamVoyage.Log
 
                 if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     warning.Visibility = ViewStates.Visible;
                     warning.Text = "Please enter your email and password.";
                     return;
@@ -93,6 +124,7 @@ namespace ZamVoyage.Log
 
                 try
                 {
+
                     // Call the signInWithEmailAndPassword method on the FirebaseAuth instance
                     var userCredential = await firebaseAuth.SignInWithEmailAndPasswordAsync(email, password);
 
@@ -101,6 +133,8 @@ namespace ZamVoyage.Log
                     // Check if the user's email is verified
                     if (user != null && user.IsEmailVerified)
                     {
+                        // Dismiss the progress dialog
+                        progressDialog.Dismiss();
                         // If sign-in is successful and email is verified, direct to Logout page
                         Intent homeIntent = new Intent(this, typeof(MainActivity));
                         StartActivity(homeIntent);
@@ -108,6 +142,9 @@ namespace ZamVoyage.Log
                     }
                     else
                     {
+                        // Dismiss the progress dialog
+                        progressDialog.Dismiss();
+
                         // If the user's email is not verified, display an error message to the user and sign them out
                         warning.Visibility = ViewStates.Visible;
                         warning.Text = "Your email is not verified. Please verify your email before logging in.";
@@ -121,12 +158,17 @@ namespace ZamVoyage.Log
                         {
                             Toast.MakeText(this, "Verification email sent failed.", ToastLength.Short).Show();
                         }
-                        firebaseAuth.SignOut(); // sign out the user
+                        // Sign out the user explicitly
+                        FirebaseAuth.Instance.SignOut();
                         return;
                     }
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                 }
                 catch (FirebaseAuthInvalidUserException)
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     // If the email address is not registered, display an error message to the user
                     warning.Visibility = ViewStates.Visible;
                     warning.Text = "Invalid email address.";
@@ -134,6 +176,8 @@ namespace ZamVoyage.Log
                 }
                 catch (FirebaseAuthInvalidCredentialsException)
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     // If the password is incorrect, display an error message to the user
                     warning.Visibility = ViewStates.Visible;
                     warning.Text = "Incorrect password.";
@@ -141,12 +185,15 @@ namespace ZamVoyage.Log
                 }
                 catch (Exception ex)
                 {
+                    // Dismiss the progress dialog
+                    progressDialog.Dismiss();
                     // If there is an error with sign-in, display the error message to the user
                     warning.Visibility = ViewStates.Visible;
-                    warning.Text = ex.Message;
+                    warning.Text = "Your email is not verified. Please verify your email before logging in.";
                     return;
                 }
             };
+
 
             registerNow.Click += (sender, e) =>
             {
@@ -183,6 +230,26 @@ namespace ZamVoyage.Log
 
         }
 
+        private void ShowProgressDialog(string message)
+        {
+            progressDialog = new ProgressDialog(this);
+            progressDialog.SetMessage(message);
+            progressDialog.SetCancelable(false);
+            progressDialog.Show();
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            if (item.ItemId == Android.Resource.Id.Home)
+            {
+                // Handle the back button press here
+                OnBackPressed();
+                return true;
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
+
         public override void OnBackPressed()
         {
             var intent = new Intent(this, typeof(Get_Started));
@@ -190,6 +257,7 @@ namespace ZamVoyage.Log
             StartActivity(intent);
             Finish(); // this will finish the current activity
         }
+
         private void HideSystemUI()
         {
             // Hide the navigation and status bars

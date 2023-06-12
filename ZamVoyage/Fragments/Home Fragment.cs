@@ -23,6 +23,7 @@ using static Java.Util.Jar.Attributes;
 using static ZamVoyage.Profile.ProfileActivity;
 using ZamVoyage.Content.Mountains;
 using Refractored.Controls;
+using ZamVoyage.Content.Activities;
 
 namespace ZamVoyage
 {
@@ -79,7 +80,7 @@ namespace ZamVoyage
             };
             activities.Click += delegate
             {
-                Intent intent = new Intent(this.Activity, typeof(ContentList.Activity_List));
+                Intent intent = new Intent(this.Activity, typeof(Additional_Activities));
                 StartActivity(intent);
             };
             amenities.Click += delegate

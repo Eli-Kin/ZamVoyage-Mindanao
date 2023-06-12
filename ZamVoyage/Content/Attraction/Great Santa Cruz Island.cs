@@ -69,6 +69,9 @@ namespace ZamVoyage.Content.Mountains
             prgph1.Typeface = Abeezee;
             prgph2.Typeface = Abeezee;
 
+            //prgph1.PaintFlags |= Android.Graphics.PaintFlags.UnderlineText;
+            //prgph2.PaintFlags |= Android.Graphics.PaintFlags.UnderlineText;
+
             var backArrowDrawable = Resources.GetDrawable(Resource.Drawable.ic_back);
             backArrowDrawable.SetTint(Color.ParseColor("#0D8BFF"));
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
@@ -93,6 +96,13 @@ namespace ZamVoyage.Content.Mountains
             tabLayout.SetupWithViewPager(viewPager, true);
 
             tabLayout.GetTabAt(1).Select();
+
+            viewPager.AddOnPageChangeListener(new ViewPagerCyclicScrollListener(viewPager, adapter));
+
+            // Hide the extra tabs for the first and last items
+            ViewGroup tabStrip = (ViewGroup)tabLayout.GetChildAt(0);
+            tabStrip.GetChildAt(0).Visibility = ViewStates.Gone;
+            tabStrip.GetChildAt(imageList.Count + 1).Visibility = ViewStates.Gone;
 
             toggleButton = FindViewById<ImageButton>(Resource.Id.toggleButton);
 

@@ -10,6 +10,27 @@
   <string name="empty_string"></string>
   <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
 
+  <!--REFERENCES-->
+  <!--Attractions-->
+  <string name="attractions_paragraph_1">About author: The Pinoy TravelerI’m Marco Dennis. (n.d.). Santa Cruz Island : The Pink Beach in Zamboanga City. The Pinoy Traveler. https://www.thepinoytraveler.com/2019/12/santa-cruz-island-pink-beach-in.html \n\n Wikimedia Foundation. (2023, April 4). Great Santa Cruz Island. Wikipedia. https://en.wikipedia.org/wiki/Great_Santa_Cruz_Island </string>
+  
+  <!--About Us-->
+  <string name="about_us_paragraph_1">Welcome to ZamVoyage! We are delighted to have you on board. Let ZamVoyage be your ultimate travel companion, guiding you through the wonders of the world, one destination at a time. Bon voyage!</string>
+  
+  <string name="about_us_paragraph_2">At ZamVoyage, we take pride in our origins. Our talented team of developers hails from STI College Kalibo, a renowned institution known for producing exceptional tech enthusiasts.</string>
+  
+  <string name="about_us_paragraph_3">I am the team leader, and my role is to design and code the app.</string>
+  
+  <string name="about_us_paragraph_4">I am the lead programmer for both back-end and front-end development.</string>
+  
+  <string name="about_us_paragraph_5">I am the content creator, and I also help code the app.</string>
+  
+  <string name="about_us_paragraph_6">I am ZamVoyage\'s content creator.</string>
+  
+  <string name="about_us_paragraph_7">I am ZamVoyage\'s content creator.</string>
+  
+  <string name="about_us_paragraph_8">I am ZamVoyage\'s content creator.</string>
+
   <!-- History -->
   <string name="history_paragraph_1">The evolution of the name “Zamboanga” provides an interesting insight into its historical background. The early Malay settlers called the region “Jambangan”, which means Land of the Flowers.</string>
 

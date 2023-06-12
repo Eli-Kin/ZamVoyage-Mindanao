@@ -80,13 +80,17 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bottom SideBar\AboutUs Activity.cs" />
     <Compile Include="Bottom SideBar\ContactUs Activity.cs" />
+    <Compile Include="Bottom SideBar\References Activity.cs" />
     <Compile Include="Bottom SideBar\Settings Activity.cs" />
     <Compile Include="ContentList\Accessibility List.cs" />
     <Compile Include="ContentList\Accommodation List.cs" />
     <Compile Include="ContentList\Activity List.cs" />
     <Compile Include="ContentList\Amenity List.cs" />
     <Compile Include="ContentList\Attraction List.cs" />
+    <Compile Include="ContentList\Attractions\Beach List.cs" />
+    <Compile Include="ContentList\Attractions\Mountain List.cs" />
     <Compile Include="ContentList\Beach List.cs" />
     <Compile Include="ContentList\Popular List.cs" />
     <Compile Include="ContentList\Waterfalls List.cs" />
@@ -130,9 +134,11 @@
     <Compile Include="Content\Attraction\The Metropolitan Cathedral of the Immaculate Conception.cs" />
     <Compile Include="Content\Attraction\The Pasonanca Park.cs" />
     <Compile Include="Content\Attraction\The Zamboanga City Hall.cs" />
+    <Compile Include="Content\Content Test.cs" />
     <Compile Include="Content\History\History.cs" />
     <Compile Include="Content\Mountains\Mountain1 Content.cs" />
     <Compile Include="Content\SlideshowAdapter.cs" />
+    <Compile Include="Content\ViewPagerCyclicScrollListener.cs" />
     <Compile Include="Favorites\FavoriteDatabaseHelper.cs" />
     <Compile Include="Favorites\FavoriteItem.cs" />
     <Compile Include="Favorites\Favorites Activity.cs" />
@@ -153,6 +159,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Fragments\Search Fragment.cs" />
     <Compile Include="Fragments\Plan Fragment.cs" />
+    <Compile Include="Planner\EditTextScrollView.cs" />
     <Compile Include="Planner\Plan.cs" />
     <Compile Include="Planner\PlanAdapter.cs" />
     <Compile Include="Planner\PlanDatabaseHelper.cs" />
@@ -306,7 +313,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\font\" />
-    <Folder Include="Resources\xml\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\log_getstarted.xml">
@@ -1433,6 +1439,44 @@
     <AndroidResource Include="Resources\layout\layout_zamboanga_motor_rental.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\layout_test.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_beach_list.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-v21\ic_favorites.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-v21\ic_travel_plan.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\category_header_corner.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\yellow_pad_texture.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_about_us.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_references.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-v21\ic_references.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\xml\file_paths.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

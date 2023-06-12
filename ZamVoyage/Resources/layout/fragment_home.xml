@@ -39,86 +39,154 @@
         android:layout_marginLeft="10dp"
         android:gravity="center">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:gravity="center"
             android:layout_weight="1">
+
+            <!--<refractored.controls.CircleImageView     
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/great_santa_cruz_island_1"
+                app:civ_border_width="1dp"/>-->
 
             <refractored.controls.CircleImageView
                 android:id="@+id/attraction"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/once_island_1"
-                app:civ_border_width="1dp"/>
+                android:src="@drawable/ic_attraction"
+                app:civ_border_width="1dp"
+                android:background="@drawable/circle_background"/>
 
+            <!--<refractored.controls.CircleImageView
+                android:id="@+id/attraction"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_attraction"
+                android:background="@android:color/transparent"/>-->
 
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
             android:layout_weight="1">
+
+            <!--<refractored.controls.CircleImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/the_regatta_de_zamboanga_1"
+                app:civ_border_width="1dp"/>-->
 
             <refractored.controls.CircleImageView
                 android:id="@+id/activities"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/the_regatta_de_zamboanga_1"
-                app:civ_border_width="1dp"/>
+                android:src="@drawable/ic_activities"
+                app:civ_border_width="1dp"
+                android:background="@drawable/circle_background"/>
 
-        </LinearLayout>
+            <!--<refractored.controls.CircleImageView
+                android:id="@+id/activities"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_activities"
+                android:background="@android:color/transparent"/>-->
 
-        <LinearLayout
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
             android:layout_weight="1">
+
+            <!--<refractored.controls.CircleImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/holy_smokes_2"
+                app:civ_border_width="1dp"/>-->
 
             <refractored.controls.CircleImageView
                 android:id="@+id/amenities"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/holy_smokes_2"
-                app:civ_border_width="1dp"/>
+                android:src="@drawable/ic_amenities"
+                app:civ_border_width="1dp"
+                android:background="@drawable/circle_background"/>
 
-        </LinearLayout>
+           <!-- <refractored.controls.CircleImageView
+                android:id="@+id/amenities"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_amenities"
+                android:background="@android:color/transparent"/>-->
 
-        <LinearLayout
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
             android:layout_weight="1">
+
+            <!--<refractored.controls.CircleImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/garden_orchid_hotel_1"
+                app:civ_border_width="1dp"/>-->
 
             <refractored.controls.CircleImageView
                 android:id="@+id/accommodation"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/garden_orchid_hotel_1"
-                app:civ_border_width="1dp"/>
+                android:src="@drawable/ic_accomodation"
+                app:civ_border_width="1dp"
+                android:background="@drawable/circle_background"/>
 
-        </LinearLayout>
+            <!--<refractored.controls.CircleImageView
+                android:id="@+id/accommodation"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_accomodation"
+                android:background="@android:color/transparent"/>-->
 
-        <LinearLayout
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
             android:layout_weight="1">
 
+            <!--<refractored.controls.CircleImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/airplane"
+                app:civ_border_width="1dp"/>-->
+
             <refractored.controls.CircleImageView
                 android:id="@+id/accessibility"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/airplane"
-                app:civ_border_width="1dp"/>
+                android:src="@drawable/ic_accessibility"
+                app:civ_border_width="1dp"
+                android:background="@drawable/circle_background"/>
 
-        </LinearLayout>
+            <!--<refractored.controls.CircleImageView
+                android:id="@+id/accessibility"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_accessibility"
+                android:background="@android:color/transparent"/>-->
+
+        </RelativeLayout>
 
     </LinearLayout>
 

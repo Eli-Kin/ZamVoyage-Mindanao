@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/imagetest8">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,7 +30,7 @@
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Additional Activities"
+                android:text="Activities"
                 android:textSize="30sp"
                 android:gravity="center"
                 android:textColor="#0D8BFF"
@@ -84,7 +85,10 @@
                 android:paddingBottom="15dp"
                 android:textColor="#000"
                 android:textSize="18sp"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:background="@drawable/yellow_pad_texture"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -127,7 +131,10 @@
                 android:paddingBottom="15dp"
                 android:textColor="#000"
                 android:textSize="18sp"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:background="@drawable/yellow_pad_texture"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -163,14 +170,17 @@
                 android:id="@+id/prgph3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="•	Swimming: You can go swimming at Merloquet Falls, which is a natural waterfall with a deep pool at the bottom."
+                android:text="•	Go swimming at Merloquet Falls"
                 android:paddingLeft="15dp"
                 android:paddingTop="10dp"
                 android:paddingRight="15dp"
                 android:paddingBottom="15dp"
                 android:textColor="#000"
                 android:textSize="18sp"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:background="@drawable/yellow_pad_texture"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -213,7 +223,10 @@
                 android:paddingBottom="15dp"
                 android:textColor="#000"
                 android:textSize="18sp"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:background="@drawable/yellow_pad_texture"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -256,7 +269,10 @@
                 android:paddingBottom="15dp"
                 android:textColor="#000"
                 android:textSize="18sp"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:background="@drawable/yellow_pad_texture"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -292,14 +308,17 @@
                 android:id="@+id/prgph7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="•	Hiking: You can go hiking at Pasonanca Park, which has a well-maintained trail and offers a scenic view of the city and Mt. Abong-Abong, which offers a panoramic view of the city and the sea."
+                android:text="•	Go hiking at Pasonanca Park"
                 android:paddingLeft="15dp"
                 android:paddingTop="10dp"
                 android:paddingRight="15dp"
                 android:paddingBottom="15dp"
                 android:textColor="#000"
                 android:textSize="18sp"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:background="@drawable/yellow_pad_texture"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -335,14 +354,33 @@
                 android:id="@+id/prgph9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="•	Sightseeing: You can visit the Fort Pilar Shrine and Museum, which is a historical landmark that showcases the city's rich cultural heritage."
+                android:text="•	Visit the Fort Pilar Shrine and Museum"
                 android:paddingLeft="15dp"
                 android:paddingTop="10dp"
                 android:paddingRight="15dp"
                 android:paddingBottom="15dp"
                 android:textColor="#000"
                 android:textSize="18sp"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:background="@drawable/yellow_pad_texture"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <Button
+                android:id="@+id/festivals"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_gradient"
+                android:text="Festivals"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginRight="30dp"/>
 
         </LinearLayout>
 

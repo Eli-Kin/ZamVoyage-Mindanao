@@ -7,27 +7,37 @@
     android:layout_height="match_parent"
     android:background="@drawable/imagetest3">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:textSize="30sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#636363"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"/>
+
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:queryBackground="@android:color/transparent"
         android:background="@drawable/edittext_border"
-        app:queryHint="Search..." 
+        app:queryHint="Search Here..." 
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="0dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Search"
-        android:textSize="28sp"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"/>
+        android:layout_marginBottom="10dp"/>
 
     <View
         android:layout_width="match_parent"

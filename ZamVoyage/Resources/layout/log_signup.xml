@@ -10,6 +10,16 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            android:elevation="4dp"
+            android:padding="5dp"
+            android:paddingBottom="10dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
+
         <TextView
             android:id="@+id/registerText"
             android:layout_width="wrap_content"
@@ -53,7 +63,8 @@
             android:layout_marginBottom="0dp"
             android:inputType="textEmailAddress"
             android:hint="First Name*"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:maxLength="15"/>
 
         <TextView
             android:id="@+id/warningTextView5"
@@ -79,7 +90,8 @@
             android:layout_marginBottom="0dp"
             android:inputType="textEmailAddress"
             android:hint="Last Name*"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:maxLength="15"/>
 
         <TextView
             android:id="@+id/warningTextView4"
@@ -105,7 +117,8 @@
             android:layout_marginBottom="0dp"
             android:inputType="textEmailAddress"
             android:hint="Username*"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:maxLength="15"/>
 
         <TextView
             android:id="@+id/warningTextView3"
@@ -157,14 +170,14 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/edittext_border"
-            android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edittext_border"
+                android:padding="10dp"
                 android:maxLines="1"
-            android:inputType="textPassword"
-            android:hint="Password*"
-            android:textSize="16sp"/>
+                android:inputType="textPassword"
+                android:hint="Password*"
+                android:textSize="16sp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -191,15 +204,15 @@
             android:layout_marginBottom="0dp">
 
             <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/confirmpasswordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/edittext_border"
-            android:padding="10dp"
+                android:id="@+id/confirmpasswordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edittext_border"
+                android:padding="10dp"
                 android:maxLines="1"
-            android:inputType="textPassword"
-            android:hint="ConfirmPassword*"
-            android:textSize="16sp"/>
+                android:inputType="textPassword"
+                android:hint="ConfirmPassword*"
+                android:textSize="16sp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

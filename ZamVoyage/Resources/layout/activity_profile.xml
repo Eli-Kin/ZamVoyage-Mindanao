@@ -49,7 +49,6 @@
                     android:foreground="?android:attr/selectableItemBackground"
                     android:background="@drawable/circle_background"/>
 
-
                 <TextView
                     android:id="@+id/nameShow"
                     android:layout_width="wrap_content"

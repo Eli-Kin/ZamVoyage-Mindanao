@@ -196,36 +196,31 @@ namespace ZamVoyage.Profile
         private void SelectAndSaveProfilePicture()
         {
             SetButtonState();
-            CropImage.Builder()
-                .SetGuidelines(CropImageView.Guidelines.On)
-                .SetAspectRatio(1, 1) // Set the desired aspect ratio for the cropped image
-                .SetCropShape(CropImageView.CropShape.Oval) // Set the shape of the crop area (e.g., oval)
-                .SetOutputCompressFormat(Bitmap.CompressFormat.Jpeg) // Set the output image format
-                .SetOutputCompressQuality(80) // Set the output image quality (0-100)
-                .Start(this);
+            Intent intent = new Intent(Intent.ActionPick);
+            intent.SetType("image/*");
+            StartActivityForResult(intent, 1);
         }
 
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
         {
             SetButtonState();
             base.OnActivityResult(requestCode, resultCode, data);
-            if (requestCode == CropImage.CropImageActivityRequestCode)
+            if (requestCode == 1 && resultCode == Result.Ok && data != null)
             {
-                CropImage.ActivityResult result = CropImage.GetActivityResult(data);
-                if (resultCode == Result.Ok)
+                // Get the selected image URI
+                selectedImageUri = data.Data;
+
+                // Check if the image format is supported
+                if (IsImageFormatSupported(selectedImageUri))
                 {
-                    // Get the cropped image URI
-                    selectedImageUri = result.Uri;
-                    // Update the profile picture
+                    // Save the profile picture
+                    //SaveProfilePicture(selectedImageUri);
+
+                    // Update the profile picture in the UI
                     try
                     {
-                        // Get the path of the cropped image
-                        imagePath = GetPathFromUri(selectedImageUri);
-
-                        //ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
-                        //ISharedPreferencesEditor editor = prefs.Edit();
-                        //editor.PutString("ImagePath", imagePath);
-                        //editor.Commit();
+                        // Get the path of the selected image
+                        string imagePath = GetPathFromUri(selectedImageUri);
 
                         originalImagePath = imagePath;
 
@@ -237,6 +232,7 @@ namespace ZamVoyage.Profile
                             Bitmap bitmap = BitmapFactory.DecodeFile(imagePath);
                             profilePic.SetImageBitmap(bitmap);
                         }
+                        
                     }
                     catch (Exception ex)
                     {
@@ -244,42 +240,6 @@ namespace ZamVoyage.Profile
                         System.Diagnostics.Debug.WriteLine("Failed to set profile picture: " + ex.Message);
                         Toast.MakeText(this, "Failed to set profile picture: " + ex.Message, ToastLength.Short).Show();
                     }
-                }
-                else if (resultCode.Equals(CropImage.CropImageActivityResultErrorCode))
-                {
-                    // Handle the error case
-                    Exception error = result.Error;
-                    System.Diagnostics.Debug.WriteLine("Failed to crop image: " + error.Message);
-                    Toast.MakeText(this, "Failed to crop image: " + error.Message, ToastLength.Short).Show();
-                }
-            }
-            else if (requestCode == 1 && resultCode == Result.Ok && data != null)
-            {
-                // Get the toggle state from Activity B
-                bool toggleState = data.GetBooleanExtra("ToggleState", false);
-
-                // Check the toggle state and recreate Activity A if necessary
-                if (!toggleState)
-                {
-                    Recreate();
-                    return;
-                }
-
-                // Get the selected image URI
-                selectedImageUri = data.Data;
-
-                // Check if the image format is supported
-                if (IsImageFormatSupported(selectedImageUri))
-                {
-                    // Start the image cropping activity
-                    CropImage.Builder()
-                        .SetGuidelines(CropImageView.Guidelines.On)
-                        .SetAspectRatio(1, 1) // Set the desired aspect ratio for the cropped image
-                        .SetCropShape(CropImageView.CropShape.Oval) // Set the shape of the crop area (e.g., oval)
-                        .SetOutputCompressFormat(Bitmap.CompressFormat.Jpeg) // Set the output image format
-                        .SetOutputCompressQuality(80) // Set the output image quality (0-100)
-                        .SetOutputUri(selectedImageUri) // Set the output image URI
-                        .Start(this);
                 }
                 else
                 {
@@ -350,7 +310,7 @@ namespace ZamVoyage.Profile
                 Toast.MakeText(this, "Failed to save profile picture: " + ex.Message, ToastLength.Short).Show();
             }
         }
-        
+
         private void EditProfileButton_Click(object sender, System.EventArgs e)
         {
             isEditMode = !isEditMode;
